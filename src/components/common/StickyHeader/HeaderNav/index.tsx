@@ -1,4 +1,4 @@
-import { useNavLinks } from '../useNavLinks';
+import { useNavLinks } from './useNavLinks';
 
 const HeaderNav = () => {
   const navLinks = useNavLinks();
