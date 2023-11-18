@@ -16,16 +16,18 @@ interface Context {
   toggleDarkMode(): void;
 }
 
-const DarkModeContext = createContext<Context | undefined>(undefined);
-
 const STORAGE_KEY = 'abMartinezPortfolioTheme';
+const DARK = 'dark';
+const LIGHT = 'light';
+
+const DarkModeContext = createContext<Context | undefined>(undefined);
 
 const getLocalStorageValue = () => {
   if (typeof window !== 'undefined' && window.localStorage) {
     return localStorage.getItem(STORAGE_KEY);
   }
 
-  return 'dark';
+  return DARK;
 };
 
 export const DarkModeProvider: FC<PropsWithChildren> = ({ children }) => {
@@ -33,14 +35,14 @@ export const DarkModeProvider: FC<PropsWithChildren> = ({ children }) => {
 
   useEffect(() => {
     const localStorageValue = getLocalStorageValue();
-    setDarkMode(localStorageValue === 'dark' ? true : false);
+    setDarkMode(localStorageValue === DARK ? true : false);
   }, []);
 
   const toggleDarkMode = useCallback(
     () =>
       setDarkMode((isDarkMode) => {
         if (typeof window !== 'undefined' && window.localStorage) {
-          localStorage.setItem(STORAGE_KEY, !isDarkMode ? 'dark' : 'light');
+          localStorage.setItem(STORAGE_KEY, !isDarkMode ? DARK : LIGHT);
         }
         return !isDarkMode;
       }),
