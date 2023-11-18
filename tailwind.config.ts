@@ -17,6 +17,13 @@ const config: Config = {
         primary: '#161513',
         secondary: '#1C1C22',
       },
+      purple: '#B16CEA',
+      red: '#FF5E69',
+      orange: '#FF8A56',
+      'light-orange': '#FFA84B',
+    },
+    container: {
+      center: true,
     },
   },
   plugins: [],

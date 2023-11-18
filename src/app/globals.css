@@ -1,3 +1,14 @@
 @tailwind base;
+
+@layer base {
+  a {
+    transition: all ease 250ms;
+  }
+
+  a:hover {
+    @apply text-red;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
