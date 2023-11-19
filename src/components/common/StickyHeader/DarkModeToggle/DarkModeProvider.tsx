@@ -35,7 +35,10 @@ export const DarkModeProvider: FC<PropsWithChildren> = ({ children }) => {
 
   useEffect(() => {
     const localStorageValue = getLocalStorageValue();
-    setDarkMode(localStorageValue === DARK ? true : false);
+
+    localStorageValue
+      ? setDarkMode(localStorageValue === DARK ? true : false)
+      : setDarkMode(matchMedia('(prefers-color-scheme: dark)').matches);
   }, []);
 
   const toggleDarkMode = useCallback(
