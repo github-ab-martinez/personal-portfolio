@@ -11,12 +11,12 @@ interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
 const baseHeadingStyle = `${geologica.className}`;
 
 const headingStyles: Record<string, string> = {
-  h1: 'text-8xl font-bold leading-tight',
-  h2: 'text-7xl font-bold leading-tight',
-  h3: 'text-5xl font-bold leading-tight',
-  h4: 'text-3xl font-semibold leading-normal',
-  h5: 'text-xl font-semibold leading-normal',
-  h6: 'text-base font-semibold leading-normal',
+  h1: 'md:text-8xl text-6xl font-bold leading-tight',
+  h2: 'md:text-7xl text-5xl font-bold leading-tight',
+  h3: 'md:text-5xl text-3xl font-bold leading-tight',
+  h4: 'md:text-3xl text-2xl font-normal leading-normal',
+  h5: 'md:text-xl font-normal leading-normal',
+  h6: 'md:text-base font-normal leading-normal',
 };
 
 const Heading: FC<HeadingProps> = ({
