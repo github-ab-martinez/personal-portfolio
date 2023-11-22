@@ -4,5 +4,5 @@ export const geologica = Geologica({ subsets: ['latin'] });
 
 export const notoSans = Noto_Sans({
   subsets: ['latin'],
-  weight: ['400', '300', '200'],
+  weight: ['600', '400', '300'],
 });
