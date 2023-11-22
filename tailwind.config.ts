@@ -21,6 +21,7 @@ const config: Config = {
       red: '#FF5E69',
       orange: '#FF8A56',
       'light-orange': '#FFA84B',
+      transparent: 'transparent',
     },
     container: {
       center: true,
