@@ -20,10 +20,5 @@ export const getNavLinks = () => {
       label: 'Testimonials',
       url: '#testimonials',
     },
-    {
-      hash: 'contactLink',
-      label: 'Contact',
-      url: '#contact',
-    },
   ];
 };
