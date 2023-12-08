@@ -12,7 +12,7 @@ const PageSection: FC<PageSectionProps> = ({
 }) => {
   return (
     <section
-      className={`md:px-24 md:py-20 py-10 px-6 ${
+      className={`md:px-24 px-6 min-h-screen flex items-center ${
         style === 'secondary' && 'bg-white-primary dark:bg-black-secondary'
       } ${className}`.trim()}
     >

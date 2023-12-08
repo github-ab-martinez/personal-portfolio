@@ -11,7 +11,7 @@ const NextLogo: FC<SVGLogo> = ({ darkMode }) => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <title>NextJS Logo</title>
-      <g clip-path="url(#clip0_32_1005)">
+      <g clipPath="url(#clip0_32_1005)">
         <path
           d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100Z"
           fill="white"
@@ -35,7 +35,7 @@ const NextLogo: FC<SVGLogo> = ({ darkMode }) => {
           gradientUnits="userSpaceOnUse"
         >
           <stop />
-          <stop offset="1" stop-opacity="0" />
+          <stop offset="1" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_32_1005"
@@ -46,7 +46,7 @@ const NextLogo: FC<SVGLogo> = ({ darkMode }) => {
           gradientUnits="userSpaceOnUse"
         >
           <stop />
-          <stop offset="1" stop-opacity="0" />
+          <stop offset="1" stopOpacity="0" />
         </linearGradient>
         <clipPath id="clip0_32_1005">
           <rect width="100" height="100" fill="white" />
@@ -62,7 +62,7 @@ const NextLogo: FC<SVGLogo> = ({ darkMode }) => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <title>NexJS Logo</title>
-      <g clip-path="url(#clip0_301_357)">
+      <g clipPath="url(#clip0_301_357)">
         <path
           d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100Z"
           fill="black"
@@ -86,7 +86,7 @@ const NextLogo: FC<SVGLogo> = ({ darkMode }) => {
           gradientUnits="userSpaceOnUse"
         >
           <stop stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop offset="1" stop-color="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_301_357"
@@ -97,7 +97,7 @@ const NextLogo: FC<SVGLogo> = ({ darkMode }) => {
           gradientUnits="userSpaceOnUse"
         >
           <stop stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop offset="1" stop-color="white" stopOpacity="0" />
         </linearGradient>
         <clipPath id="clip0_301_357">
           <rect width="100" height="100" fill="white" />

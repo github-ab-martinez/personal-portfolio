@@ -1,6 +1,9 @@
-import { Geologica, Noto_Sans } from 'next/font/google';
+import { Noto_Sans, Bai_Jamjuree } from 'next/font/google';
 
-export const geologica = Geologica({ subsets: ['latin'] });
+export const baiJam = Bai_Jamjuree({
+  subsets: ['latin'],
+  weight: ['600', '500', '400', '300'],
+});
 
 export const notoSans = Noto_Sans({
   subsets: ['latin'],
