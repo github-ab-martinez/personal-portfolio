@@ -7,7 +7,7 @@ import CodeAnimation from './CodeAnimation';
 
 const HeroSection = () => {
   return (
-    <PageSection className="flex lg:flex-nowrap flex-wrap">
+    <PageSection className="flex lg:flex-nowrap flex-wrap items-center">
       <motion.div
         initial={{ x: '-100%', opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}

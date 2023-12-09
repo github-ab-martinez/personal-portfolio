@@ -1,4 +1,5 @@
 import { FC, PropsWithChildren } from 'react';
+import ContentContainer from '../ContentContainer';
 
 interface PageSectionProps extends PropsWithChildren {
   className?: string;
@@ -12,11 +13,11 @@ const PageSection: FC<PageSectionProps> = ({
 }) => {
   return (
     <section
-      className={`md:px-24 px-6 min-h-screen flex items-center ${
+      className={`md:px-24 px-6 py-24 overflow-hidden ${
         style === 'secondary' && 'bg-white-primary dark:bg-black-secondary'
-      } ${className}`.trim()}
+      }`}
     >
-      {children}
+      <ContentContainer className={className}>{children}</ContentContainer>
     </section>
   );
 };
