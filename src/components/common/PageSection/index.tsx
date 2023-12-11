@@ -4,17 +4,18 @@ import ContentContainer from '../ContentContainer';
 interface PageSectionProps extends PropsWithChildren {
   className?: string;
   style?: 'primary' | 'secondary';
+  secondary?: boolean;
 }
 
 const PageSection: FC<PageSectionProps> = ({
   children,
   className,
-  style = 'primary',
+  secondary = false,
 }) => {
   return (
     <section
       className={`md:px-24 px-6 py-24 overflow-hidden ${
-        style === 'secondary' && 'bg-white-primary dark:bg-black-secondary'
+        secondary && 'bg-white-primary dark:bg-black-secondary'
       }`}
     >
       <ContentContainer className={className}>{children}</ContentContainer>

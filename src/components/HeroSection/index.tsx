@@ -9,7 +9,8 @@ const HeroSection = () => {
   return (
     <PageSection
       className="flex lg:flex-nowrap flex-wrap items-center relative before:bg-gradient-radial 
-    before:from-purple before:to-transparent before:blur-3xl before:content-[''] before:rounded-full before:absolute before:h-[140%] before:w-[120%] before:translate-x-[30%] before:translate-y-[25%] before:-z-10"
+    before:from-purple before:to-transparent before:blur-3xl before:content-[''] before:rounded-full before:absolute before:h-[140%] before:w-[120%] before:translate-x-[30%] before:translate-y-[25%]"
+      secondary={true}
     >
       <motion.div
         initial={{ x: '-100%', opacity: 0 }}

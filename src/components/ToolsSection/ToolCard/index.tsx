@@ -10,7 +10,7 @@ interface ToolCardProps {
 
 const ToolCard: FC<ToolCardProps> = ({ name, logo: Logo, darkMode }) => {
   return (
-    <div className="bg-white-secondary dark:bg-black-primary p-8 rounded-md text-center flex flex-col items-center">
+    <div className="bg-white-primary dark:bg-black-secondary p-8 rounded-md text-center flex flex-col items-center">
       <span className="h-[100px] flex items-center">
         <Logo darkMode={darkMode ?? true} />
       </span>
