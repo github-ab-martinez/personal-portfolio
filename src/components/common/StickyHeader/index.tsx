@@ -11,7 +11,7 @@ const StickyHeader = () => {
   const [mobileNavVisible, setMobileNavVisible] = useState(false);
 
   return (
-    <header className="md:px-24 px-6 py-6 fixed w-full bg-white-secondary/50 dark:bg-black-primary/50 backdrop-blur-md z-10">
+    <header className="md:px-24 px-6 py-6 fixed w-full bg-white-secondary/50 dark:bg-black-primary/50 backdrop-blur-md z-20">
       <div className="2xl:container a flex items-center">
         <span className="dark:text-black-primary text-white-primary">
           <AbLogo />
