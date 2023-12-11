@@ -48,19 +48,17 @@ const CodeAnimation = () => {
   const codeBubbles = useCodeBubbles();
 
   return (
-    <div
-      className="w-1/2 h-100 pl-10 relative flex items-center justify-center before:bg-gradient-radial 
-    before:from-purple before:to-transparent before:blur-3xl before:content-[''] before:rounded-full before:absolute before:h-[250%] before:w-[250%] before:translate-x-[15%] before:translate-y-[35%] before:-z-10"
-    >
+    <div className="lg:order-2 lg:w-1/2 lg:h-100 lg:pl-10 mb-10">
       <motion.svg
         width="765"
-        height="728"
+        height="auto"
         viewBox="0 0 765 728"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         initial="hidden"
         animate="visible"
         variants={container}
+        className="max-w-full"
       >
         <rect x="54" y="68" width="650" height="660" rx="4" fill="#0F1216" />
         <circle cx="74" cy="87" r="6" fill="#FF4C51" />

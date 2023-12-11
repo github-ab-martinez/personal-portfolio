@@ -13,7 +13,9 @@ const StickyHeader = () => {
   return (
     <header className="md:px-24 px-6 py-6 fixed w-full bg-white-secondary/50 dark:bg-black-primary/50 backdrop-blur-md z-10">
       <div className="2xl:container a flex items-center">
-        <AbLogo />
+        <span className="dark:text-black-primary text-white-primary">
+          <AbLogo />
+        </span>
         <Heading className="font-semibold ml-3" level="h5">
           A.b. Martinez
         </Heading>

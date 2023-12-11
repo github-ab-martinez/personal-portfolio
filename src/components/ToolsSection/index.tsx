@@ -32,7 +32,7 @@ const ToolsSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ amount: 'all' }}
       >
-        <Heading level="h3" className="mb-3">
+        <Heading level="h2" className="mb-10">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple via-red to-orange">
             Tools
           </span>{' '}
