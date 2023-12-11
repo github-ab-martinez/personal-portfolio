@@ -48,7 +48,7 @@ const CodeAnimation = () => {
   const codeBubbles = useCodeBubbles();
 
   return (
-    <div className="lg:order-2 lg:w-1/2 lg:h-100 lg:pl-10 mb-10">
+    <div className="lg:order-2 lg:w-1/2 lg:h-100 lg:pl-10 mb-10 z-10">
       <motion.svg
         width="765"
         height="auto"
