@@ -20,10 +20,10 @@ const SparkleIcon = () => {
           y2="15.333"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.140625" stop-color="#B16CEA" />
-          <stop offset="0.447917" stop-color="#FF5E69" />
-          <stop offset="0.71875" stop-color="#FF8A56" />
-          <stop offset="1" stop-color="#FFA84B" />
+          <stop offset="0.140625" stopColor="#B16CEA" />
+          <stop offset="0.447917" stopColor="#FF5E69" />
+          <stop offset="0.71875" stopColor="#FF8A56" />
+          <stop offset="1" stopColor="#FFA84B" />
         </linearGradient>
       </defs>
     </svg>

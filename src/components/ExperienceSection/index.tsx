@@ -1,5 +1,9 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
 import Heading from '../common/Heading';
 import PageSection from '../common/PageSection';
+import { useNavSpy } from '../common/StickyHeader/HeaderNav/NavSpyProvider';
 import { useWorkHistory } from './useWorkHistory';
 
 const months: Record<number, string> = {
@@ -19,11 +23,22 @@ const months: Record<number, string> = {
 
 const ExperienceSection = () => {
   const workHistory = useWorkHistory();
+  const { navObserver } = useNavSpy();
+  const experienceRef = useRef(null);
+
+  useEffect(() => {
+    experienceRef.current && navObserver?.observe(experienceRef.current);
+  }, [navObserver]);
 
   return (
     <PageSection secondary className="flex">
       <div className="mb-10 w-1/2">
-        <Heading level="h2" className="mb-10">
+        <Heading
+          ref={experienceRef}
+          id="experience"
+          level="h2"
+          className="mb-10"
+        >
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple via-red to-orange">
             Experience
           </span>

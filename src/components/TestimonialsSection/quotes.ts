@@ -8,42 +8,42 @@ export interface Quote {
 export const getQuotes = (): Quote[] => {
   return [
     {
-      hash: 'TommyQuote',
+      hash: 'TommyQuote1',
       name: 'Tommy Ekstrand',
       quote:
         'Lorem ipsum dolor. Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor.',
       relation: 'Engineering Manager - BigCommerce',
     },
     {
-      hash: 'TommyQuote',
+      hash: 'TommyQuote2',
       name: 'Tommy Ekstrand',
       quote:
         'Lorem ipsum dolor. Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor.',
       relation: 'Engineering Manager - BigCommerce',
     },
     {
-      hash: 'TommyQuote',
+      hash: 'TommyQuote3',
       name: 'Tommy Ekstrand',
       quote:
         'Lorem ipsum dolor. Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor.',
       relation: 'Engineering Manager - BigCommerce',
     },
     {
-      hash: 'TommyQuote',
+      hash: 'TommyQuote4',
       name: 'Tommy Ekstrand',
       quote:
         'Lorem ipsum dolor. Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor.',
       relation: 'Engineering Manager - BigCommerce',
     },
     {
-      hash: 'TommyQuote',
+      hash: 'TommyQuote5',
       name: 'Tommy Ekstrand',
       quote:
         'Lorem ipsum dolor. Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor.',
       relation: 'Engineering Manager - BigCommerce',
     },
     {
-      hash: 'TommyQuote',
+      hash: 'TommyQuote6',
       name: 'Tommy Ekstrand',
       quote:
         'Lorem ipsum dolor. Lorem ipsum dolor. Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor.',
