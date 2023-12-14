@@ -85,8 +85,8 @@ const NextLogo: FC<SVGLogo> = ({ darkMode }) => {
           y2="89.1666"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" />
-          <stop offset="1" stop-color="white" stopOpacity="0" />
+          <stop stopColor="white" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_301_357"
@@ -96,8 +96,8 @@ const NextLogo: FC<SVGLogo> = ({ darkMode }) => {
           y2="59.3751"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" />
-          <stop offset="1" stop-color="white" stopOpacity="0" />
+          <stop stopColor="white" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <clipPath id="clip0_301_357">
           <rect width="100" height="100" fill="white" />

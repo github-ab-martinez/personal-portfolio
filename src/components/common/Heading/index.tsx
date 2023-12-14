@@ -1,5 +1,5 @@
 import { baiJam } from '@/app/fonts';
-import { FC, ReactNode } from 'react';
+import { ReactNode, forwardRef } from 'react';
 
 interface HeadingProps extends React.HTMLAttributes<HTMLHeadingElement> {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
@@ -19,21 +19,22 @@ const headingStyles: Record<string, string> = {
   h6: 'md:text-base font-normal leading-normal',
 };
 
-const Heading: FC<HeadingProps> = ({
-  as: As = 'h1',
-  children,
-  className,
-  level = 'h1',
-  ...props
-}) => {
-  return (
-    <As
-      className={`${headingStyles[level]} ${baseHeadingStyle} ${className}`.trim()}
-      {...props}
-    >
-      {children}
-    </As>
-  );
-};
+type Ref = HTMLHeadingElement;
+
+const Heading = forwardRef<Ref, HeadingProps>(
+  ({ as: As = 'h1', children, className, level = 'h1', ...props }, ref) => {
+    return (
+      <As
+        ref={ref}
+        className={`${headingStyles[level]} ${baseHeadingStyle} ${className}`.trim()}
+        {...props}
+      >
+        {children}
+      </As>
+    );
+  }
+);
+
+Heading.displayName = 'Heading';
 
 export default Heading;

@@ -4,8 +4,17 @@ import { motion } from 'framer-motion';
 import Heading from '../common/Heading';
 import PageSection from '../common/PageSection';
 import CodeAnimation from './CodeAnimation';
+import { useNavSpy } from '../common/StickyHeader/HeaderNav/NavSpyProvider';
+import { useEffect, useRef } from 'react';
 
 const HeroSection = () => {
+  const { navObserver } = useNavSpy();
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    heroRef.current && navObserver?.observe(heroRef.current);
+  }, [navObserver]);
+
   return (
     <PageSection
       className="flex lg:flex-nowrap flex-wrap items-center relative before:bg-gradient-radial 
@@ -18,7 +27,7 @@ const HeroSection = () => {
         transition={{ duration: 1.25, type: 'spring', bounce: 0.4 }}
         className="lg:w-1/2 lg:text-left text-center order-2 md:order-1"
       >
-        <Heading level="h2" className="mb-14">
+        <Heading ref={heroRef} id="home" level="h2" className="mb-14">
           Hi! I&apos;m A.b., a{' '}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple via-red to-orange">
             Software Engineer

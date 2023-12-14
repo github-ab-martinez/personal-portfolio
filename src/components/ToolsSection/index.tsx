@@ -1,8 +1,10 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import Heading from '../common/Heading';
 import PageSection from '../common/PageSection';
 import { useDarkMode } from '../common/StickyHeader/DarkModeToggle/DarkModeProvider';
+import { useNavSpy } from '../common/StickyHeader/HeaderNav/NavSpyProvider';
 import ToolCard from './ToolCard';
 import { useTools } from './useTools';
 import { motion } from 'framer-motion';
@@ -24,15 +26,21 @@ const toolList = {
 const ToolsSection = () => {
   const tools = useTools();
   const { darkMode } = useDarkMode();
+  const { navObserver } = useNavSpy();
+  const skillsRef = useRef(null);
+
+  useEffect(() => {
+    skillsRef.current && navObserver?.observe(skillsRef.current);
+  }, [navObserver]);
 
   return (
-    <PageSection style="secondary">
+    <PageSection>
       <motion.div
         initial={{ opacity: 0, y: '100%' }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ amount: 'all' }}
       >
-        <Heading level="h2" className="mb-10">
+        <Heading ref={skillsRef} id="skills" level="h2" className="mb-10">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple via-red to-orange">
             Tools
           </span>{' '}

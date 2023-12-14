@@ -30,10 +30,10 @@ const AbLogo = () => {
           y2="19.9381"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.145833" stop-color="#B16CEA" />
-          <stop offset="0.692708" stop-color="#FF5E69" />
-          <stop offset="0.9999" stop-color="#FF8A56" />
-          <stop offset="1" stop-color="#FFA84B" />
+          <stop offset="0.145833" stopColor="#B16CEA" />
+          <stop offset="0.692708" stopColor="#FF5E69" />
+          <stop offset="0.9999" stopColor="#FF8A56" />
+          <stop offset="1" stopColor="#FFA84B" />
         </linearGradient>
       </defs>
     </svg>
