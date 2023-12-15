@@ -14,7 +14,7 @@ const PageSection: FC<PageSectionProps> = ({
 }) => {
   return (
     <section
-      className={`md:px-24 px-6 py-24 overflow-hidden ${
+      className={`py-24 overflow-hidden ${
         secondary && 'bg-white-primary dark:bg-black-secondary'
       }`}
     >
