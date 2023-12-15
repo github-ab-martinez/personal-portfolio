@@ -6,6 +6,7 @@ import PageSection from "../common/PageSection";
 import CodeAnimation from "./CodeAnimation";
 import { useNavSpy } from "../common/StickyHeader/HeaderNav/NavSpyProvider";
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 
 const HeroSection = () => {
   const { navObserver } = useNavSpy();
@@ -39,16 +40,24 @@ const HeroSection = () => {
           accomplish their goals.
         </p>
       </motion.div>
-      <div className="z-10 flex flex-col lg:ml-auto lg:w-1/2 xl:w-2/5">
+      <div className="z-0 flex flex-col lg:ml-auto lg:w-1/2 xl:w-2/5">
         <CodeAnimation />
-        <motion.button
+
+        <motion.span
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 4.75, type: "spring", bounce: 0.4 }}
-          className="relative -top-8 z-10 mx-auto -mb-8 w-5/6 rounded-full bg-black-primary px-6 py-4 text-lg font-semibold uppercase text-white-primary before:absolute before:left-[-2px] before:top-[-2px] before:-z-10 before:inline-block before:h-[calc(100%+4px)] before:w-[calc(100%+4px)] before:rounded-full before:bg-transparent before:from-purple before:via-red before:to-orange before:opacity-0 before:transition-all before:duration-500 before:content-[''] hover:before:opacity-100 dark:bg-white-primary dark:text-black-primary before:dark:bg-gradient-to-r md:w-auto lg:right-0"
+          className="relative -top-4 mx-auto -mb-4"
         >
-          Download My Resume
-        </motion.button>
+          <Link
+            className="relative z-10 w-5/6 rounded-full bg-white-primary px-6 py-4 text-lg font-semibold  uppercase text-black-primary before:absolute before:left-[-3px] before:top-[-3px] before:-z-10 before:h-[calc(100%+6px)]  before:w-[calc(100%+6px)] before:rounded-full before:bg-gradient-to-r before:from-purple before:via-red before:to-orange before:opacity-0 before:transition-all before:duration-500 before:content-[''] after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:rounded-full after:bg-white-primary after:content-[''] hover:text-black-primary hover:before:opacity-100 md:w-auto"
+            href="/resume/AbMartinez_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download My Resume
+          </Link>
+        </motion.span>
       </div>
     </PageSection>
   );
