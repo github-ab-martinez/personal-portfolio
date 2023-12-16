@@ -20,16 +20,14 @@ const ToolsSection = () => {
 
   return (
     <PageSection>
-      <div>
-        <Heading
-          ref={skillsRef}
-          id="skills"
-          level="h2"
-          className="mb-5 inline-block bg-gradient-to-r from-purple via-red to-orange bg-clip-text text-transparent"
-        >
-          Skills
-        </Heading>
-      </div>
+      <Heading
+        ref={skillsRef}
+        id="skills"
+        level="h2"
+        className="mb-5 inline-block bg-gradient-to-r from-purple via-red to-orange bg-clip-text text-transparent"
+      >
+        Skills
+      </Heading>
       <p className="mb-10 text-lg">
         Languages, frameworks and other tools I love to work with.
       </p>
