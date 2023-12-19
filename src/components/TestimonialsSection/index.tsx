@@ -1,11 +1,11 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import Heading from '../common/Heading';
-import PageSection from '../common/PageSection';
-import { useNavSpy } from '../common/StickyHeader/HeaderNav/NavSpyProvider';
-import QuoteCard from './Quote';
-import { useQuotes } from './useQuotes';
+import { useEffect, useRef } from "react";
+import Heading from "../common/Heading";
+import PageSection from "../common/PageSection";
+import { useNavSpy } from "../common/StickyHeader/HeaderNav/NavSpyProvider";
+import { useQuotes } from "./useQuotes";
+import Slider from "../QuoteSlider";
 
 const TestimonialsSection = () => {
   const quotes = useQuotes();
@@ -22,18 +22,16 @@ const TestimonialsSection = () => {
         ref={testimonialsRef}
         id="testimonials"
         level="h2"
-        className="mb-10"
+        className="mb-5"
       >
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple via-red to-orange">
+        <span className="bg-gradient-to-r from-purple via-red to-orange bg-clip-text text-transparent">
           Testimonials
         </span>
       </Heading>
-      <p className="text-lg mb-10">Some quotes from my peers.</p>
-      <div className="grid grid-cols-2 gap-10">
-        {quotes.map((quote) => (
-          <QuoteCard key={quote.hash} {...quote} />
-        ))}
-      </div>
+      <p className="mb-10 text-lg lg:mb-20">Some quotes from my peers.</p>
+      <section className="mx-auto lg:w-2/3">
+        <Slider quotes={quotes} />
+      </section>
     </PageSection>
   );
 };
