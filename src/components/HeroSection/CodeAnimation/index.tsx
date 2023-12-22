@@ -12,16 +12,17 @@ const container = {
       bounce: 0.4,
       duration: 1,
       delayChildren: 1,
-      staggerChildren: 0.075,
+      staggerChildren: 0.05,
     },
   },
 };
 
 const item = {
-  hidden: { width: 0 },
-  visible: (width: number) => {
+  hidden: { pathLength: 0, opacity: 0 },
+  visible: (pathLength: number) => {
     return {
-      width,
+      pathLength,
+      opacity: 1,
     };
   },
 };
@@ -198,17 +199,15 @@ const CodeAnimation = () => {
         d="M89 538.864C89 538.405 89.1067 538 89.32 537.648C89.5227 537.285 89.8053 537.003 90.168 536.8C90.52 536.587 90.9253 536.48 91.384 536.48H100.408C100.867 536.48 101.272 536.587 101.624 536.8C101.987 537.003 102.269 537.285 102.472 537.648C102.685 538 102.792 538.405 102.792 538.864V538.896C102.792 539.355 102.685 539.765 102.472 540.128C102.269 540.48 101.987 540.763 101.624 540.976C101.272 541.179 100.867 541.28 100.408 541.28H91.384C90.9253 541.28 90.52 541.179 90.168 540.976C89.8053 540.763 89.5227 540.48 89.32 540.128C89.1067 539.765 89 539.355 89 538.896V538.864Z"
         fill="#5C636D"
       />
-      {codeBubbles.map(({ x, y, width, fill }) => (
-        <motion.rect
-          key={x * y}
-          x={x}
-          y={y}
-          width={width}
-          height="12"
-          rx="6"
-          fill={fill}
+      {codeBubbles.map(({ d, stroke }) => (
+        <motion.path
+          key={d}
+          d={d}
+          stroke={stroke}
+          stroke-width="12"
+          stroke-linecap="round"
           variants={item}
-          custom={width}
+          custom={1}
         />
       ))}
       <path
