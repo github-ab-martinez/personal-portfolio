@@ -8,11 +8,11 @@ const availabilityContent = ["7+ Yrs Experience", "Available for Hire"];
 
 const AvailabilityBanner = () => {
   const { scrollYProgress } = useScroll();
-  const translateX = useTransform(scrollYProgress, [0, 0.25], ["-200%", "0%"]);
+  const translateX = useTransform(scrollYProgress, [0, 0.35], ["-200%", "0%"]);
 
   return (
     <section className="relative mb-[-30px] mt-[-30px] overflow-hidden py-12 before:absolute before:bottom-[30px] before:h-[calc(100%-60px)] before:w-full before:bg-gradient-to-r before:from-purple  before:via-red before:to-orange before:content-['']">
-      <div className="relative left-[-25%] top-0 flex w-[calc(150%)] -rotate-3 gap-6 bg-white-primary py-6 text-black-primary">
+      <div className="relative left-[-25%] top-0 flex w-[calc(150%)] -rotate-2 gap-6 bg-white-primary py-6 text-black-primary">
         {availabilityContent
           .concat(...Array(3).fill(availabilityContent))
           .map((content, index) => (
