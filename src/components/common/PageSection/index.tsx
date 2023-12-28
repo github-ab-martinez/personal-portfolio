@@ -1,9 +1,9 @@
-import { FC, PropsWithChildren } from 'react';
-import ContentContainer from '../ContentContainer';
+import { FC, PropsWithChildren } from "react";
+import ContentContainer from "../ContentContainer";
 
 interface PageSectionProps extends PropsWithChildren {
   className?: string;
-  style?: 'primary' | 'secondary';
+  style?: "primary" | "secondary";
   secondary?: boolean;
 }
 
@@ -14,8 +14,8 @@ const PageSection: FC<PageSectionProps> = ({
 }) => {
   return (
     <section
-      className={`py-24 overflow-hidden ${
-        secondary && 'bg-white-primary dark:bg-black-secondary'
+      className={`overflow-hidden py-40 ${
+        secondary && "bg-white-primary dark:bg-black-secondary"
       }`}
     >
       <ContentContainer className={className}>{children}</ContentContainer>

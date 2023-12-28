@@ -8,7 +8,7 @@ import { useNavSpy } from "../common/StickyHeader/HeaderNav/NavSpyProvider";
 import ToolCard from "./ToolCard";
 import { useTools } from "./useTools";
 
-const ToolsSection = () => {
+const SkillsSection = () => {
   const tools = useTools();
   const { darkMode } = useDarkMode();
   const { navObserver } = useNavSpy();
@@ -19,7 +19,7 @@ const ToolsSection = () => {
   }, [navObserver]);
 
   return (
-    <PageSection>
+    <PageSection className="text-center">
       <Heading
         ref={skillsRef}
         id="skills"
@@ -28,10 +28,10 @@ const ToolsSection = () => {
       >
         Skills
       </Heading>
-      <p className="mb-10 text-lg">
+      <p className="mb-20 text-lg">
         Languages, frameworks and other tools I love to work with.
       </p>
-      <ul className="grid grow grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-5">
+      <ul className="grid grow grid-cols-2 gap-x-4 gap-y-12 sm:grid-cols-3 md:gap-12 lg:grid-cols-4 xl:grid-cols-5">
         {tools.map((tool) => (
           <li key={tool.name}>
             <ToolCard darkMode={darkMode ?? true} {...tool} />
@@ -42,4 +42,4 @@ const ToolsSection = () => {
   );
 };
 
-export default ToolsSection;
+export default SkillsSection;
