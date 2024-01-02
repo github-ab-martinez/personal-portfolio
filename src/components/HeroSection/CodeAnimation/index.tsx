@@ -40,7 +40,7 @@ const CodeAnimation = () => {
       initial="hidden"
       animate="visible"
       variants={container}
-      className="h-auto w-full max-w-full"
+      className="h-auto w-full max-w-full text-white-primary"
     >
       <rect width="650" height="640" rx="4" fill="#0F1216" />
       <circle cx="20" cy="19" r="6" fill="#FF4C51" />
