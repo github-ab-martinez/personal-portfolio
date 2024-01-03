@@ -21,6 +21,10 @@ const months: Record<number, string> = {
   12: "December",
 };
 
+const getFormattedDate = (date: Date) => {
+  return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+};
+
 const ExperienceSection = () => {
   const workHistory = useWorkHistory();
   const { navObserver } = useNavSpy();
@@ -31,66 +35,52 @@ const ExperienceSection = () => {
   }, [navObserver]);
 
   return (
-    <PageSection
-      secondary
-      className="flex flex-col justify-between md:flex-row"
-    >
-      <div className="shrink sm:mr-6">
-        <Heading
-          ref={experienceRef}
-          id="experience"
-          level="h2"
-          className="mb-5 inline-block bg-gradient-to-r from-purple via-red to-orange bg-clip-text text-transparent"
-        >
-          Experience
-        </Heading>
-        <p className="mb-10 text-lg">
-          Places where I&apos;ve written code professionally.
-        </p>
-      </div>
+    <PageSection secondary className="text-center">
+      <Heading
+        ref={experienceRef}
+        id="experience"
+        level="h2"
+        className="mb-5 inline-block bg-gradient-to-r from-purple via-red to-orange bg-clip-text text-transparent"
+      >
+        Experience
+      </Heading>
+      <p className="mb-20 text-lg">
+        Places where I&apos;ve written code for money.
+      </p>
 
-      <ul className="sm:w-1/2 lg:w-full">
-        {workHistory.map(({ company, startDate, endDate, role, techStack }) => {
-          return (
-            <li
-              key={startDate.toString()}
-              className="relative flex flex-col pb-14 pl-8 before:absolute before:left-[3px] before:top-4 before:h-full before:w-[1px] before:bg-white-secondary before:content-[''] after:absolute after:left-0 after:top-3
-            after:h-[8px] after:w-[8px] after:rounded-full after:bg-orange after:content-[''] lg:flex-row lg:pb-0 lg:before:hidden lg:after:hidden"
+      <ul className="relative z-0 text-left before:absolute before:left-0 before:-z-10 before:h-full before:w-full before:bg-gradient-to-r before:from-purple before:via-red before:to-orange before:content-['']">
+        {workHistory.map(({ company, startDate, endDate, role, techStack }) => (
+          <li
+            key={startDate.toString()}
+            className="z-0 flex flex-col border-y bg-white-primary px-3 py-6 transition-colors duration-500 hover:bg-transparent dark:bg-black-secondary hover:dark:bg-transparent lg:flex-row lg:items-center lg:px-6 lg:py-10"
+          >
+            <div className="order-1 mb-3 lg:mb-0">
+              <Heading level="h3" className="lg:mb-4">
+                {company}
+              </Heading>
+              <Heading level="h4">{role}</Heading>
+            </div>
+            <ul className="align-start order-3 flex flex-wrap gap-3 lg:order-2 lg:ml-auto lg:mr-6 lg:grow-0 lg:basis-[20%] lg:gap-4">
+              {techStack.map((tech, index) => (
+                <li
+                  key={index}
+                  className="whitespace-nowrap rounded-full border-2 border-purple px-4 py-1 text-sm"
+                >
+                  {tech}
+                </li>
+              ))}
+            </ul>
+            <Heading
+              level="h5"
+              className="order-2 mb-8 lg:order-3 lg:mb-0 lg:basis-[30%] lg:text-right"
             >
-              <p className="mb-2 pt-1 font-light lg:w-1/2 lg:text-right">
-                {months[startDate.getMonth()]} {startDate.getDate()},{" "}
-                {startDate.getFullYear()} -{" "}
-                <span className="whitespace-nowrap">
-                  {months[endDate.getMonth()]} {endDate.getDate()},{" "}
-                  {endDate.getFullYear()}
-                </span>
-              </p>
-              <div
-                className="relative shrink-0 before:absolute before:left-[11px] before:top-4 before:hidden before:h-full before:w-[1px] before:bg-white-secondary before:content-[''] after:absolute after:left-2 after:top-3 after:hidden after:h-[8px]
-                after:w-[8px] after:rounded-full after:bg-orange after:content-[''] lg:pb-14 lg:pl-8 lg:before:inline-block lg:after:inline-block"
-              >
-                <Heading level="h4" as="h3" className="mb-1">
-                  {company}
-                </Heading>
-                <Heading level="h5" as="h4" className="mb-10 font-semibold">
-                  {role}
-                </Heading>
-                <ul className="flex flex-wrap gap-3">
-                  {techStack.map((tech) => {
-                    return (
-                      <li
-                        className="rounded-full bg-purple px-3 py-1 text-sm text-black-secondary"
-                        key={tech}
-                      >
-                        {tech}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            </li>
-          );
-        })}
+              {getFormattedDate(startDate)} -{" "}
+              <span className="whitespace-nowrap">
+                {getFormattedDate(endDate)}
+              </span>
+            </Heading>
+          </li>
+        ))}
       </ul>
     </PageSection>
   );
