@@ -1,6 +1,9 @@
-const SparkleIcon = () => {
+import { FC } from "react";
+
+const SparkleIcon: FC<{ className?: string }> = ({ className }) => {
   return (
     <svg
+      className={className}
       width="33"
       height="33"
       viewBox="0 0 33 33"
@@ -20,9 +23,9 @@ const SparkleIcon = () => {
           y2="15.333"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset="0.140625" stopColor="#B16CEA" />
-          <stop offset="0.447917" stopColor="#FF5E69" />
-          <stop offset="0.71875" stopColor="#FF8A56" />
+          <stop offset="0.140625" stopColor="#800EEB" />
+          <stop offset="0.447917" stopColor="#EE2A7B" />
+          <stop offset="0.71875" stopColor="#FA8D34" />
           <stop offset="1" stopColor="#FFA84B" />
         </linearGradient>
       </defs>

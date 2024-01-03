@@ -15,7 +15,7 @@ const StickyHeader = () => {
     <header className="fixed z-20 w-full bg-white-secondary/50 py-6 backdrop-blur-md dark:bg-black-primary/50">
       <ContentContainer className="flex items-center">
         <div className="flex items-center">
-          <span className="text-white-primary">
+          <span className="text-black-primary dark:text-white-primary">
             <AbLogo />
           </span>
           <Heading className="ml-3 hidden font-normal lg:block" level="h5">
