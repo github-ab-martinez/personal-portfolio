@@ -204,8 +204,8 @@ const CodeAnimation = () => {
           key={d}
           d={d}
           stroke={stroke}
-          stroke-width="12"
-          stroke-linecap="round"
+          strokeWidth="12"
+          strokeLinecap="round"
           variants={item}
           custom={1}
         />

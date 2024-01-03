@@ -8,7 +8,7 @@ const AppWrapper: FC<PropsWithChildren> = ({ children }) => {
   return (
     <html lang="en" className={darkMode ? "dark" : ""}>
       <body
-        className={`${notoSans.className} max-w-full overflow-x-hidden bg-white-secondary text-black-secondary dark:bg-black-primary dark:text-white-primary`}
+        className={`${notoSans.className} max-w-full overflow-x-hidden bg-white-secondary text-black-secondary transition-[background-color] duration-500 dark:bg-black-primary dark:text-white-primary`}
       >
         {darkMode === undefined ? null : <>{children}</>}
       </body>
