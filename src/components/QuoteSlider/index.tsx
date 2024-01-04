@@ -3,6 +3,7 @@ import { FC, useState } from "react";
 import { Quote } from "../TestimonialsSection/quotes";
 import QuoteCard from "../TestimonialsSection/Quote";
 import { useSwipeable } from "react-swipeable";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface SliderProps {
   quotes: Quote[];
@@ -11,8 +12,6 @@ interface SliderProps {
 const QuoteSlider: FC<SliderProps> = ({ quotes }) => {
   const [activeSlide, setActiveSlide] = useState(0);
   const handleSwipeLeft = () => {
-    console.log("swiped left");
-
     if (activeSlide === quotes.length - 1) {
       return;
     }
@@ -21,8 +20,6 @@ const QuoteSlider: FC<SliderProps> = ({ quotes }) => {
   };
 
   const handleSwipeRight = () => {
-    console.log("swiped right");
-
     if (activeSlide === 0) {
       return;
     }
@@ -31,34 +28,60 @@ const QuoteSlider: FC<SliderProps> = ({ quotes }) => {
   };
 
   const handlers = useSwipeable({
-    onSwipedLeft: () => handleSwipeLeft,
-    onSwipedRight: () => handleSwipeRight,
+    onSwipedLeft: () => handleSwipeLeft(),
+    onSwipedRight: () => handleSwipeRight(),
   });
 
   return (
-    <section>
-      <div
+    <section className="relative">
+      <motion.div
         {...handlers}
-        className="relative flex w-full flex-nowrap overflow-hidden transition-all"
+        animate={{
+          x: `calc(-${activeSlide}00% - ${
+            activeSlide === 0 ? "0" : `${80 * activeSlide}`
+          }px)`,
+        }}
+        transition={{ duration: 0.5 }}
+        className="relative flex flex-nowrap gap-20"
       >
         <AnimatePresence>
           {quotes.map((quote) => {
-            if (quote.hash === quotes[activeSlide].hash) {
-              return (
-                <motion.div
-                  className="shrink-0 basis-full"
-                  key={quote.hash}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                >
-                  <QuoteCard {...quotes[activeSlide]} />
-                </motion.div>
-              );
-            }
+            return (
+              <motion.div
+                className="min-w-full"
+                key={quote.hash}
+                animate={{
+                  scale: quote.hash !== quotes[activeSlide].hash ? 0.9 : 1,
+                }}
+                transition={{ duration: 0.5 }}
+              >
+                <QuoteCard
+                  skeleton={quote.hash !== quotes[activeSlide].hash}
+                  {...quote}
+                />
+              </motion.div>
+            );
           })}
         </AnimatePresence>
-      </div>
+      </motion.div>
+      <button
+        disabled={activeSlide === 0}
+        onClick={() => handleSwipeRight()}
+        className={`absolute -left-14 top-[calc(50%-theme(spacing.20))] z-20 hidden items-center justify-center rounded-full border-2 border-purple/50 p-6 text-white-primary/50 transition-all duration-300 hover:border-purple hover:text-white-primary md:flex ${
+          activeSlide === 0 && "hidden"
+        }`}
+      >
+        <ChevronLeft />
+      </button>
+      <button
+        disabled={activeSlide === quotes.length - 1}
+        onClick={() => handleSwipeLeft()}
+        className={`absolute -right-14 top-[calc(50%-theme(spacing.20))] z-20 hidden items-center justify-center rounded-full border-2 border-purple/50 p-6 text-white-primary/50 transition-all duration-300 hover:border-purple hover:text-white-primary md:flex ${
+          activeSlide === quotes.length - 1 && "hidden"
+        }`}
+      >
+        <ChevronRight />
+      </button>
       <div className="mt-14 inline-flex justify-center gap-4 bg-gradient-to-r from-purple via-red to-orange p-1">
         {quotes.map((quote, index) => (
           <button

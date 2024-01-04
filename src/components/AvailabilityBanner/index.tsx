@@ -17,18 +17,16 @@ const AvailabilityBanner = () => {
           {availabilityContent
             .concat(...Array(5).fill(availabilityContent))
             .map((content, index) => (
-              <>
+              <span key={index} className="flex items-center gap-6">
                 <Heading
-                  key={`content-${index}`}
                   className="whitespace-nowrap font-semibold"
                   level="h4"
                   as="h2"
                 >
                   {content}
-                  {index}
                 </Heading>
-                <SparkleIcon key={`icon-${index}`} className="shrink-0" />
-              </>
+                <SparkleIcon className="shrink-0" />
+              </span>
             ))}
         </motion.span>
       </div>
