@@ -16,16 +16,18 @@ const AvailabilityBanner = () => {
         <motion.span style={{ translateX }} className="flex items-center gap-6">
           {availabilityContent
             .concat(...Array(5).fill(availabilityContent))
-            .map((content) => (
+            .map((content, index) => (
               <>
                 <Heading
+                  key={`content-${index}`}
                   className="whitespace-nowrap font-semibold"
                   level="h4"
                   as="h2"
                 >
                   {content}
+                  {index}
                 </Heading>
-                <SparkleIcon className="shrink-0" />
+                <SparkleIcon key={`icon-${index}`} className="shrink-0" />
               </>
             ))}
         </motion.span>

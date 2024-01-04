@@ -17,19 +17,17 @@ const TestimonialsSection = () => {
   }, [navObserver]);
 
   return (
-    <PageSection style="secondary">
+    <PageSection style="secondary" className="text-center">
       <Heading
         ref={testimonialsRef}
         id="testimonials"
         level="h2"
-        className="mb-5"
+        className="mb-5 inline-block bg-gradient-to-r from-purple via-red to-orange bg-clip-text text-transparent"
       >
-        <span className="bg-gradient-to-r from-purple via-red to-orange bg-clip-text text-transparent">
-          Testimonials
-        </span>
+        Testimonials
       </Heading>
-      <p className="mb-10 text-lg lg:mb-20">Some quotes from my peers.</p>
-      <section className="mx-auto lg:w-2/3">
+      <p className="mb-20 text-lg">Some quotes from my peers.</p>
+      <section className="mx-auto xl:w-2/3">
         <Slider quotes={quotes} />
       </section>
     </PageSection>
