@@ -1,18 +1,14 @@
-import NextLogo from '@/assets/logos/NextLogo';
-import TailwindLogo from '@/assets/logos/TailwindLogo';
-import TypescriptLogo from '@/assets/logos/TypescriptLogo';
+import AbLogo from "@/assets/logos/AbLogo";
 
 const Footer = () => {
   return (
-    <footer className="container flex justify-end border-t py-20 text-center">
-      <div>
-        <p>Developed by A.b. Martinez using:</p>
-        <div className="flex justify-center items-center gap-3">
-          <span>
-            <TypescriptLogo />
-          </span>
-          <NextLogo darkMode />
-          <TailwindLogo />
+    <footer className=" bg-white-primary py-12 font-light dark:bg-black-secondary">
+      <div className="container flex flex-col items-center lg:flex-row lg:justify-between">
+        <p className="mb-6 lg:mb-0">
+          &copy; 2024 - Built from scratch by A.b. Martinez
+        </p>
+        <div>
+          <AbLogo />
         </div>
       </div>
     </footer>
