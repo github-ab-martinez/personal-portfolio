@@ -27,7 +27,7 @@ const TestimonialsSection = () => {
         Testimonials
       </Heading>
       <p className="mb-20 text-lg">Some quotes from my peers.</p>
-      <section className="mx-auto xl:w-2/3">
+      <section className="mx-auto md:w-2/3">
         <Slider quotes={quotes} />
       </section>
     </PageSection>

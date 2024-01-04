@@ -4,22 +4,53 @@ import Heading from "@/components/common/Heading";
 
 import { baiJam } from "@/app/fonts";
 
-const QuoteCard: FC<Quote> = ({ quote, name, relation }) => {
+const QuoteCard: FC<{ skeleton?: boolean } & Quote> = ({
+  quote,
+  name,
+  relation,
+  skeleton,
+}) => {
   return (
-    <blockquote className="flex flex-col gap-10 rounded-md bg-white-primary px-10 py-10 dark:bg-black-secondary lg:flex-row lg:py-20 lg:text-left">
-      <p
-        className={`text-xl lg:order-2 lg:text-3xl ${baiJam.className} font-semibold leading-normal`}
-      >
-        {quote}
-      </p>
-      <div className="flex flex-col border-t pt-10 lg:order-1 lg:justify-center lg:border-r lg:border-t-0 lg:pr-10 lg:pt-0">
-        <Heading
-          level="h5"
-          className="mb-1 inline-block whitespace-nowrap bg-gradient-to-r from-purple via-red to-orange bg-clip-text font-semibold text-transparent"
+    <blockquote
+      className={`flex h-full flex-col justify-center gap-10 rounded-md bg-white-primary px-10 py-10 dark:bg-black-secondary ${
+        skeleton && "opacity-80 blur-sm"
+      }`}
+    >
+      {skeleton ? (
+        <div className="flex w-full flex-col justify-center">
+          <div className="mb-6 h-5 w-full bg-white-primary"></div>
+          <div className="mb-6 h-5 w-full bg-white-primary"></div>
+          <div className="mb-6 h-5 w-full bg-white-primary"></div>
+          <div className="h-5 w-3/5 bg-white-primary"></div>
+        </div>
+      ) : (
+        <p
+          className={`text-xl lg:text-2xl ${baiJam.className} font-semibold leading-normal`}
         >
-          {name}
-        </Heading>
-        <Heading level="h6">{relation}</Heading>
+          {quote}
+        </p>
+      )}
+      <div className="mx-auto flex w-4/5 flex-col items-center border-t pt-10">
+        {skeleton ? (
+          <>
+            <div className="mb-4 h-3 w-32 rounded-full bg-gradient-to-r from-purple via-red to-orange"></div>
+            <div className="mb-2 h-2 w-28 rounded-full bg-white-primary"></div>
+            <div className="h-2 w-20 rounded-full bg-white-primary"></div>
+          </>
+        ) : (
+          <>
+            <Heading
+              level="h5"
+              as="h3"
+              className="mb-1 inline-block whitespace-nowrap bg-gradient-to-r from-purple via-red to-orange bg-clip-text font-semibold text-transparent"
+            >
+              {name}
+            </Heading>
+            <Heading level="h6" as="h4">
+              {relation}
+            </Heading>
+          </>
+        )}
       </div>
     </blockquote>
   );
