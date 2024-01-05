@@ -38,7 +38,8 @@ const CodeAnimation = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       initial="hidden"
-      animate="visible"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
       variants={container}
       className="h-auto w-full max-w-full text-white-primary"
     >
