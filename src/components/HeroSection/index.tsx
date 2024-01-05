@@ -31,7 +31,8 @@ const HeroSection = () => {
           ref={heroRef}
           id="home"
           level="h2"
-          className="mb-10 leading-relaxed lg:mb-14"
+          as="h2"
+          className="mb-10 lg:mb-14"
         >
           Hi! I&apos;m A.b., a{" "}
           <span className="bg-gradient-to-r from-purple via-red to-orange bg-clip-text text-transparent">
@@ -39,20 +40,21 @@ const HeroSection = () => {
           </span>{" "}
           based in Austin.
         </Heading>
-        <p className="mb-10 text-lg font-light lg:mb-0 xl:w-4/5">
+        <p className="mb-10 text-lg font-light leading-8 lg:mb-0 xl:w-4/5">
           I build products for the web with a focus on{" "}
           <span className="font-semibold">developing UIs</span> that help users
           accomplish their goals.
         </p>
       </motion.div>
       <div className="flex flex-col lg:ml-auto lg:w-1/2">
-        <div className="after:lg:clip-ellipse-right after:clip-ellipse-bottom relative z-0 pt-6 before:absolute before:-right-[calc(50vw-50%)] before:top-0 before:-z-10 before:h-[calc(100%+theme(spacing.60))] before:w-screen before:bg-purple before:content-[''] after:absolute after:-right-[calc(50vw-50%)] after:-top-20 after:-z-10 after:h-[calc(theme(spacing.20))] after:w-screen after:bg-purple after:content-[''] lg:static  lg:pt-0 before:lg:-top-40 before:lg:h-[calc(100%+theme(spacing.80))] before:lg:w-[calc(50vw-theme(spacing.20))] after:lg:-top-40  after:lg:right-[calc(50%-theme(spacing.20))] after:lg:h-[calc(100%+theme(spacing.60)+theme(spacing.44))] after:lg:w-[calc(theme(spacing.28))]">
+        <div className="after:lg:clip-ellipse-right after:clip-ellipse-bottom relative z-0 pt-6 before:absolute before:-right-[calc(50vw-50%)] before:top-0 before:-z-10 before:h-[calc(100%+theme(spacing.60))] before:w-screen before:bg-purple before:content-[''] after:absolute after:-right-[calc(50vw-50%)] after:-top-20 after:-z-10 after:h-[calc(theme(spacing.20))] after:w-screen after:bg-purple after:content-[''] lg:static lg:pl-6  lg:pt-0 before:lg:-top-40 before:lg:h-[calc(100%+theme(spacing.80))] before:lg:w-[calc(50vw-theme(spacing.20))] after:lg:-top-40  after:lg:right-[calc(50%-theme(spacing.20))] after:lg:h-[calc(100%+theme(spacing.60)+theme(spacing.44))] after:lg:w-[calc(theme(spacing.28))]">
           <CodeAnimation />
         </div>
 
         <motion.span
           initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
+          whileInView={{ scale: 1 }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ delay: 3.25, type: "spring", bounce: 0.4 }}
           className="relative -top-4 mx-auto -mb-4"
         >
