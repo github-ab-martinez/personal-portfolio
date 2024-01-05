@@ -32,10 +32,10 @@ const config: Config = {
     plugin(function ({ addUtilities }) {
       addUtilities({
         ".clip-ellipse-right": {
-          "clip-path": "ellipse(75% 60% at right center)",
+          clipPath: "ellipse(75% 60% at right center)",
         },
         ".clip-ellipse-bottom": {
-          "clip-path": "ellipse(75% 60% at bottom center)",
+          clipPath: "ellipse(75% 60% at bottom center)",
         },
       });
     }),

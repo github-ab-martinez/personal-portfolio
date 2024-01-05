@@ -28,12 +28,15 @@ const SkillsSection = () => {
       >
         Skills
       </Heading>
-      <p className="mb-20 text-lg">
+      <p className="mb-24 text-lg">
         Languages, frameworks and other tools I love to work with.
       </p>
-      <ul className="grid grow grid-cols-2 gap-x-4 gap-y-12 sm:grid-cols-3 md:gap-12 lg:grid-cols-4 xl:grid-cols-5">
+      <ul className="flex flex-wrap justify-center gap-5">
         {tools.map((tool) => (
-          <li key={tool.name}>
+          <li
+            className="grow-0 basis-[calc(50%-theme(spacing.3))] sm:basis-[calc(33.3333%-theme(spacing.4))] md:basis-[calc(25%-theme(spacing.4))] xl:basis-[calc(20%-theme(spacing.4))]"
+            key={tool.name}
+          >
             <ToolCard darkMode={darkMode ?? true} {...tool} />
           </li>
         ))}

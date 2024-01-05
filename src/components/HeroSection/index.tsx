@@ -31,7 +31,7 @@ const HeroSection = () => {
           ref={heroRef}
           id="home"
           level="h2"
-          as="h2"
+          as="h1"
           className="mb-10 lg:mb-14"
         >
           Hi! I&apos;m A.b., a{" "}
@@ -59,7 +59,7 @@ const HeroSection = () => {
           className="relative -top-4 mx-auto -mb-4"
         >
           <Link
-            className="relative z-10 w-5/6 rounded-full bg-white-primary px-6 py-4 text-lg font-semibold uppercase text-black-primary shadow-lg before:absolute before:left-[-3px] before:top-[-3px] before:-z-10  before:h-[calc(100%+6px)] before:w-[calc(100%+6px)] before:rounded-full before:bg-gradient-to-r before:from-purple before:via-red before:to-orange before:opacity-0 before:transition-all before:duration-500 before:content-[''] after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:rounded-full after:bg-white-primary after:content-[''] hover:text-black-primary hover:before:opacity-100 md:w-auto"
+            className="relative z-10 rounded-full bg-white-primary px-4 py-4 text-lg font-semibold uppercase text-black-primary shadow-lg before:absolute before:left-[-3px] before:top-[-3px] before:-z-10 before:h-[calc(100%+6px)]  before:w-[calc(100%+6px)] before:rounded-full before:bg-gradient-to-r before:from-purple before:via-red before:to-orange before:opacity-0 before:transition-all before:duration-500 before:content-[''] after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:rounded-full after:bg-white-primary after:content-[''] hover:text-black-primary hover:before:opacity-100 sm:px-6 md:w-auto"
             href="/resume/AbMartinez_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
