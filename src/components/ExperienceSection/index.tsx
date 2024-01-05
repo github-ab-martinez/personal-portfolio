@@ -45,17 +45,17 @@ const ExperienceSection = () => {
         Experience
       </Heading>
       <p className="mb-20 text-lg">
-        Places where I&apos;ve written code for money.
+        Places where I&apos;ve written code professionally.
       </p>
 
-      <ul className="relative z-0 text-left before:absolute before:left-0 before:-z-10 before:h-full before:w-full before:bg-gradient-to-r before:from-purple before:via-red before:to-orange before:content-['']">
+      <ul className="relative z-0 border-t text-left before:absolute before:left-0 before:-z-10 before:h-full before:w-full before:bg-gradient-to-r before:from-purple before:via-red before:to-orange before:content-['']">
         {workHistory.map(({ company, startDate, endDate, role, techStack }) => (
           <li
             key={startDate.toString()}
-            className="z-0 flex flex-col border-y bg-white-primary px-3 py-6 transition-colors duration-500 hover:bg-transparent dark:bg-black-secondary hover:dark:bg-transparent lg:flex-row lg:items-center lg:px-6 lg:py-10"
+            className="z-0 flex flex-col border-b bg-white-primary px-3 py-6 transition-colors duration-500 hover:bg-transparent hover:text-white-primary dark:bg-black-secondary hover:dark:bg-transparent lg:flex-row lg:items-center lg:px-6 lg:py-10"
           >
             <div className="order-1 mb-3 lg:mb-0">
-              <Heading level="h3" className="lg:mb-4">
+              <Heading level="h3" className="lg:mb-2">
                 {company}
               </Heading>
               <Heading level="h4">{role}</Heading>
@@ -64,7 +64,7 @@ const ExperienceSection = () => {
               {techStack.map((tech, index) => (
                 <li
                   key={index}
-                  className="whitespace-nowrap rounded-full border-2 border-purple px-4 py-1 text-sm"
+                  className="whitespace-nowrap rounded-full border-2 border-purple bg-purple px-4 py-1 text-sm text-white-primary"
                 >
                   {tech}
                 </li>
