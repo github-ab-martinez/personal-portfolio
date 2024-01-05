@@ -53,7 +53,7 @@ const QuoteSlider: FC<SliderProps> = ({ quotes, className, label }) => {
         <button
           disabled={activeSlide === 0}
           onClick={() => handleSwipeRight()}
-          className={`relative -left-12 top-0 mr-auto hidden items-center justify-center rounded-full border-2 border-purple p-6 opacity-50 transition-all duration-300 hover:border-purple hover:text-white-primary hover:opacity-100 md:flex ${
+          className={`relative -left-12 top-0 mr-auto hidden items-center justify-center rounded-full border-2 border-purple p-6 opacity-50 transition-all duration-300 hover:border-purple hover:opacity-100 md:flex ${
             activeSlide === 0 && "md:hidden"
           }`}
           aria-label="Previous slide"
@@ -63,7 +63,7 @@ const QuoteSlider: FC<SliderProps> = ({ quotes, className, label }) => {
         <button
           disabled={activeSlide === quotes.length - 1}
           onClick={() => handleSwipeLeft()}
-          className={`relative -right-12 top-0 ml-auto hidden items-center justify-center rounded-full border-2 border-purple p-6 opacity-50 transition-all duration-300 hover:border-purple hover:text-white-primary hover:opacity-100  md:flex ${
+          className={`relative -right-12 top-0 ml-auto hidden items-center justify-center rounded-full border-2 border-purple p-6 opacity-50 transition-all duration-300 hover:border-purple hover:opacity-100  md:flex ${
             activeSlide === quotes.length - 1 && "md:hidden"
           }`}
           aria-label="Next slide"
