@@ -1,25 +1,30 @@
-import { Sun, Moon } from 'lucide-react';
-import { useDarkMode } from './DarkModeProvider';
+import { Sun, Moon } from "lucide-react";
+import { useDarkMode } from "./DarkModeProvider";
 
 const DarkModeToggle = () => {
   const { darkMode, toggleDarkMode } = useDarkMode();
 
   return (
     <label
-      className="relative inline-flex items-center cursor-pointer"
+      className="relative inline-flex cursor-pointer items-center"
       htmlFor="darkModeToggle"
     >
       <input
-        className="sr-only peer"
+        className="peer sr-only"
         checked={darkMode}
         onChange={toggleDarkMode}
         id="darkModeToggle"
         type="checkbox"
       />
-      <span className="bg-white-primary p-1 text-black-primary peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-purple rounded-full">
+      <span
+        aria-hidden="true"
+        className="rounded-full bg-white-primary p-1 text-black-primary peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-purple"
+      >
         {darkMode ? <Sun size={16} /> : <Moon size={16} />}
       </span>
-      <span className="sr-only">Enable dark mode</span>
+      <span className="sr-only">{`Enable ${
+        darkMode ? "light" : "dark"
+      } mode`}</span>
     </label>
   );
 };
