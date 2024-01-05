@@ -5,7 +5,7 @@ import Heading from "../common/Heading";
 import PageSection from "../common/PageSection";
 import { useNavSpy } from "../common/StickyHeader/HeaderNav/NavSpyProvider";
 import { useQuotes } from "./useQuotes";
-import Slider from "../QuoteSlider";
+import Slider from "./QuoteSlider";
 
 const TestimonialsSection = () => {
   const quotes = useQuotes();
@@ -26,10 +26,14 @@ const TestimonialsSection = () => {
       >
         Testimonials
       </Heading>
-      <p className="mb-20 text-lg">Some quotes from my peers.</p>
-      <section className="mx-auto md:w-2/3">
-        <Slider quotes={quotes} />
-      </section>
+      <p id="slider-label" className="mb-20 text-lg">
+        Some quotes from my peers.
+      </p>
+      <Slider
+        quotes={quotes}
+        className="relative mx-auto flex flex-col gap-12 md:w-2/3"
+        label="slider-label"
+      />
     </PageSection>
   );
 };
