@@ -1,8 +1,8 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, PanInfo } from "framer-motion";
 import { FC, useState } from "react";
 import { Quote } from "../quotes";
 import QuoteCard from "../Quote";
-import { useSwipeable } from "react-swipeable";
+// import { useSwipeable } from "react-swipeable";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface SliderProps {
@@ -29,10 +29,14 @@ const QuoteSlider: FC<SliderProps> = ({ quotes, className, label }) => {
     setActiveSlide((currentSlide) => currentSlide - 1);
   };
 
-  const handlers = useSwipeable({
-    onSwipedLeft: () => handleSwipeLeft(),
-    onSwipedRight: () => handleSwipeRight(),
-  });
+  const handleDragEnd = (info: PanInfo) => {
+    if (info.offset.x > 150) {
+      handleSwipeRight();
+    }
+    if (info.offset.x < -150) {
+      handleSwipeLeft();
+    }
+  };
 
   return (
     <section
@@ -95,7 +99,6 @@ const QuoteSlider: FC<SliderProps> = ({ quotes, className, label }) => {
         })}
       </div>
       <motion.div
-        {...handlers}
         animate={{
           x: `calc(-${activeSlide}00% - ${
             activeSlide === 0 ? "0" : `${80 * activeSlide}`
@@ -115,6 +118,7 @@ const QuoteSlider: FC<SliderProps> = ({ quotes, className, label }) => {
                 drag="x"
                 dragSnapToOrigin={true}
                 dragConstraints={{ left: 10, right: 10 }}
+                onDragEnd={(event, info) => handleDragEnd(info)}
                 animate={{
                   scale: !isActiveSlide ? 0.9 : 1,
                 }}
