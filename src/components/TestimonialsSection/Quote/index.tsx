@@ -12,16 +12,16 @@ const QuoteCard: FC<{ skeleton?: boolean } & Quote> = ({
 }) => {
   return (
     <blockquote
-      className={`flex h-full flex-col justify-center gap-10 rounded-md bg-white-primary px-10 py-10 dark:bg-black-secondary ${
+      className={`flex h-full flex-col justify-center gap-10 rounded-md bg-white-secondary px-10 py-10 dark:bg-black-secondary ${
         skeleton && "opacity-80 blur-sm"
       }`}
     >
       {skeleton ? (
         <div className="flex w-full flex-col justify-center">
-          <div className="mb-6 h-5 w-full bg-white-primary"></div>
-          <div className="mb-6 h-5 w-full bg-white-primary"></div>
-          <div className="mb-6 h-5 w-full bg-white-primary"></div>
-          <div className="h-5 w-3/5 bg-white-primary"></div>
+          <div className="mb-6 h-5 w-full bg-white-secondary"></div>
+          <div className="mb-6 h-5 w-full bg-white-secondary"></div>
+          <div className="mb-6 h-5 w-full bg-white-secondary"></div>
+          <div className="h-5 w-3/5 bg-white-secondary"></div>
         </div>
       ) : (
         <p
@@ -34,8 +34,8 @@ const QuoteCard: FC<{ skeleton?: boolean } & Quote> = ({
         {skeleton ? (
           <>
             <div className="mb-4 h-3 w-32 rounded-full bg-gradient-to-r from-purple via-red to-orange"></div>
-            <div className="mb-2 h-2 w-28 rounded-full bg-white-primary"></div>
-            <div className="h-2 w-20 rounded-full bg-white-primary"></div>
+            <div className="mb-2 h-2 w-28 rounded-full bg-white-secondary"></div>
+            <div className="h-2 w-20 rounded-full bg-white-secondary"></div>
           </>
         ) : (
           <>

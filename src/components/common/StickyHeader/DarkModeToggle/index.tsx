@@ -18,7 +18,7 @@ const DarkModeToggle = () => {
       />
       <span
         aria-hidden="true"
-        className="rounded-full bg-white-primary p-1 text-black-primary peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-purple"
+        className="rounded-full bg-white-secondary p-1 text-black-primary peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-purple"
       >
         {darkMode ? <Sun size={16} /> : <Moon size={16} />}
       </span>

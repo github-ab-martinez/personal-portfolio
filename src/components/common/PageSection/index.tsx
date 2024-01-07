@@ -14,8 +14,8 @@ const PageSection: FC<PageSectionProps> = ({
 }) => {
   return (
     <section
-      className={`overflow-hidden py-20 transition-[background-color] duration-500 lg:py-40 ${
-        secondary && "bg-white-primary dark:bg-black-secondary"
+      className={`overflow-hidden py-16 transition-[background-color] duration-500 lg:py-32 ${
+        secondary && "bg-white-secondary dark:bg-black-secondary"
       }`}
     >
       <ContentContainer className={className}>{children}</ContentContainer>

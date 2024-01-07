@@ -28,7 +28,7 @@ const SkillsSection = () => {
       >
         Skills
       </Heading>
-      <p className="mb-24 text-lg">
+      <p className="mb-10 text-lg lg:mb-20">
         Languages, frameworks and other tools I love to work with.
       </p>
       <ul className="flex flex-wrap justify-center gap-5">

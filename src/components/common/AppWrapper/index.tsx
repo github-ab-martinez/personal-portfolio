@@ -15,9 +15,9 @@ const AppWrapper: FC<PropsWithChildren> = ({ children }) => {
       <body
         className={`${
           notoSans.className
-        } max-w-full overflow-x-hidden bg-white-secondary text-black-secondary ${
+        } max-w-full overflow-x-hidden bg-white-primary text-black-secondary ${
           bgTransition ? "transition-all duration-500" : "transition-none"
-        }  dark:bg-black-primary dark:text-white-primary`}
+        }  dark:bg-black-primary dark:text-white-secondary`}
       >
         {darkMode === undefined ? null : <>{children}</>}
       </body>
