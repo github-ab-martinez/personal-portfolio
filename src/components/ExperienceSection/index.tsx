@@ -23,7 +23,7 @@ const months: Record<number, string> = {
 
 const getFormattedDate = (date: Date) => {
   console.log(date.getMonth());
-  return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+  return `${months[date.getMonth()]} ${date.getFullYear()}`;
 };
 
 const ExperienceSection = () => {
