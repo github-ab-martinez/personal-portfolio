@@ -3,12 +3,6 @@ The personal portfolio site of Senior Software Engineer A.b. Martinez.
 ## Want to run this locally?
 
 ```bash
-npm install
-```
-
-then
-
-```bash
 npm run dev
 # or
 yarn dev
