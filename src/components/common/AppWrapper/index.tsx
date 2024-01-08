@@ -12,6 +12,11 @@ const AppWrapper: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <html lang="en" className={darkMode ? "dark" : ""}>
+      <title>A.b. Martinez - Personal Portfolio</title>
+      <meta
+        name="description"
+        content="The personal portfolio of A.b. Martinez, Software Engineer."
+      />
       <body
         className={`${
           notoSans.className
