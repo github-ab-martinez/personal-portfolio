@@ -46,8 +46,8 @@ const HeroSection = () => {
           accomplish their goals.
         </p>
       </motion.div>
-      <div className="flex flex-col lg:ml-auto lg:w-1/2">
-        <div className="after:lg:clip-ellipse-right after:clip-ellipse-bottom relative z-0 pt-6 before:absolute before:-right-[calc(50vw-50%)] before:top-0 before:-z-10 before:h-[calc(100%+theme(spacing.60))] before:w-screen before:bg-purple before:content-[''] after:absolute after:-right-[calc(50vw-50%)] after:-top-20 after:-z-10 after:h-[calc(theme(spacing.20))] after:w-screen after:bg-purple after:content-[''] lg:static lg:pl-6  lg:pt-0 before:lg:-top-40 before:lg:h-[calc(100%+theme(spacing.80))] before:lg:w-[calc(50vw-theme(spacing.20))] after:lg:-top-40  after:lg:right-[calc(50%-theme(spacing.20))] after:lg:h-[calc(100%+theme(spacing.60)+theme(spacing.44))] after:lg:w-[calc(theme(spacing.28))]">
+      <div className="flex flex-col lg:ml-auto lg:w-1/2 lg:pl-6">
+        <div className="after:lg:clip-ellipse-right after:clip-ellipse-bottom relative z-0 pt-6 before:absolute before:-right-[calc(50vw-50%)] before:top-0 before:-z-10 before:h-[calc(100%+theme(spacing.60))] before:w-screen before:bg-purple before:content-[''] after:absolute after:-right-[calc(50vw-50%)] after:-top-20 after:-z-10 after:h-[calc(theme(spacing.20))] after:w-screen after:bg-purple after:content-[''] lg:static lg:pt-0 before:lg:-top-40 before:lg:h-[calc(100%+theme(spacing.80))] before:lg:w-[calc(50vw-theme(spacing.20))] after:lg:-top-40  after:lg:right-[calc(50%-theme(spacing.20))] after:lg:h-[calc(100%+theme(spacing.60)+theme(spacing.44))] after:lg:w-[calc(theme(spacing.28))]">
           <CodeAnimation />
         </div>
 
