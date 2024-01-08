@@ -14,8 +14,8 @@ const MobileNavToggle: FC<MobileNavToggleProps> = ({
     <button
       className={`${
         mobileNavVisible
-          ? "text-white-primary dark:text-black-primary"
-          : "text-black-primary dark:text-white-primary"
+          ? "text-white-secondary dark:text-black-primary"
+          : "text-black-primary dark:text-white-secondary"
       } z-20 ml-5 md:hidden`}
       onClick={() => setMobileNavVisible((isVisible) => !isVisible)}
     >

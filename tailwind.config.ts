@@ -11,8 +11,8 @@ const config: Config = {
   theme: {
     colors: {
       white: {
-        primary: "#F0F2F5",
-        secondary: "#FFFFFF",
+        primary: "#FBFBFF",
+        secondary: "#F0F2F5",
       },
       black: {
         primary: "#161513",

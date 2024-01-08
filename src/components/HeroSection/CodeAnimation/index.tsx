@@ -38,10 +38,10 @@ const CodeAnimation = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       initial="hidden"
-      whileInView="visible"
+      animate="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={container}
-      className="h-auto w-full max-w-full text-white-primary"
+      className="h-auto w-full max-w-full text-white-secondary"
     >
       <rect width="650" height="640" rx="4" fill="#0F1216" />
       <circle cx="20" cy="19" r="6" fill="#FF4C51" />

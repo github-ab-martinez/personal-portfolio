@@ -82,10 +82,10 @@ const QuoteSlider: FC<SliderProps> = ({ quotes, className, label }) => {
           return (
             <button
               key={quote.hash}
-              className={`relative h-4 w-4 rounded-full transition-colors duration-500 before:absolute before:-left-[2px] before:-top-[2px] before:h-[calc(100%+4px)] before:w-[calc(100%+4px)] before:rounded-full before:ring-[9px] before:ring-white-secondary  before:ring-offset-1 before:ring-offset-transparent before:transition-all before:duration-500 before:content-[''] before:dark:ring-black-primary ${
+              className={`relative h-4 w-4 rounded-full transition-colors duration-500 before:absolute before:-left-[2px] before:-top-[2px] before:h-[calc(100%+4px)] before:w-[calc(100%+4px)] before:rounded-full before:ring-[9px] before:ring-white-primary  before:ring-offset-1 before:ring-offset-transparent before:transition-all before:duration-500 before:content-[''] before:dark:ring-black-primary ${
                 isActiveSlide
                   ? "bg-transparent"
-                  : "bg-white-secondary dark:bg-black-primary"
+                  : "bg-white-primary dark:bg-black-primary"
               }`}
               onClick={() => setActiveSlide(index)}
               disabled={isActiveSlide}

@@ -26,7 +26,7 @@ const TestimonialsSection = () => {
       >
         Testimonials
       </Heading>
-      <p id="slider-label" className="mb-20 text-lg">
+      <p id="slider-label" className="mb-10 text-lg lg:mb-20">
         Some quotes from my peers.
       </p>
       <Slider

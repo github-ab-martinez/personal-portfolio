@@ -12,7 +12,7 @@ const AvailabilityBanner = () => {
 
   return (
     <section className="relative mb-[-30px] mt-[-30px] overflow-hidden py-12 before:absolute before:bottom-[30px] before:h-[calc(100%-60px)] before:w-full before:bg-gradient-to-r before:from-purple  before:via-red before:to-orange before:content-['']">
-      <div className="relative left-[-25%] top-0 w-[calc(150%)] -rotate-2 bg-white-primary py-6 text-black-primary">
+      <div className="relative left-[-25%] top-0 w-[calc(150%)] -rotate-2 bg-white-secondary py-6 text-black-primary dark:bg-white-primary">
         <motion.span style={{ translateX }} className="flex items-center gap-6">
           {availabilityContent
             .concat(...Array(5).fill(availabilityContent))
