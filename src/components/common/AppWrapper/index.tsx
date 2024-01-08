@@ -1,6 +1,7 @@
 import { FC, PropsWithChildren, useEffect, useState } from "react";
 import { useDarkMode } from "@/components/common/StickyHeader/DarkModeToggle/DarkModeProvider";
 import { notoSans } from "@/app/fonts";
+import { Analytics } from "@vercel/analytics/react";
 
 const AppWrapper: FC<PropsWithChildren> = ({ children }) => {
   const { darkMode } = useDarkMode();
@@ -25,6 +26,7 @@ const AppWrapper: FC<PropsWithChildren> = ({ children }) => {
         }  dark:bg-black-primary dark:text-white-secondary`}
       >
         {darkMode === undefined ? null : <>{children}</>}
+        <Analytics />
       </body>
     </html>
   );
