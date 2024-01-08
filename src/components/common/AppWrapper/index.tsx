@@ -2,6 +2,7 @@ import { FC, PropsWithChildren, useEffect, useState } from "react";
 import { useDarkMode } from "@/components/common/StickyHeader/DarkModeToggle/DarkModeProvider";
 import { notoSans } from "@/app/fonts";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const AppWrapper: FC<PropsWithChildren> = ({ children }) => {
   const { darkMode } = useDarkMode();
@@ -27,6 +28,7 @@ const AppWrapper: FC<PropsWithChildren> = ({ children }) => {
       >
         {darkMode === undefined ? null : <>{children}</>}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
