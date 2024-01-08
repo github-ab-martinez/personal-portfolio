@@ -47,7 +47,9 @@ const HeaderNav: FC<HeaderNavProps> = ({
           return (
             <li
               key={hash}
-              className={`${activeLink === url ? "text-transparent" : ""}`}
+              className={`${
+                activeLink === url ? "text-purple md:text-transparent" : ""
+              }`}
             >
               <a
                 className="hover:text-transparent"
