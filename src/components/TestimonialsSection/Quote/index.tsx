@@ -1,8 +1,9 @@
-import { FC } from "react";
-import { Quote } from "../quotes";
-import Heading from "@/components/common/Heading";
+import { FC } from 'react';
 
-import { baiJam } from "@/app/fonts";
+import { Quote } from '../quotes';
+
+import Heading from '@/components/Heading';
+import { baiJam } from '@/app/fonts';
 
 const QuoteCard: FC<{ skeleton?: boolean } & Quote> = ({
   quote,
@@ -13,7 +14,7 @@ const QuoteCard: FC<{ skeleton?: boolean } & Quote> = ({
   return (
     <blockquote
       className={`flex h-full flex-col justify-center gap-10 rounded-md bg-white-secondary px-10 py-10 dark:bg-black-secondary ${
-        skeleton && "opacity-80 blur-sm"
+        skeleton && 'opacity-80 blur-sm'
       }`}
     >
       {skeleton ? (
@@ -40,13 +41,13 @@ const QuoteCard: FC<{ skeleton?: boolean } & Quote> = ({
         ) : (
           <>
             <Heading
-              level="h5"
               as="h3"
               className="mb-1 inline-block whitespace-nowrap bg-gradient-to-r from-purple via-red to-orange bg-clip-text font-semibold text-transparent"
+              level="h5"
             >
               {name}
             </Heading>
-            <Heading level="h6" as="h4">
+            <Heading as="h4" level="h6">
               {relation}
             </Heading>
           </>

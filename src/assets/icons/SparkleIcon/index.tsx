@@ -1,13 +1,13 @@
-import { FC } from "react";
+import { FC } from 'react';
 
 const SparkleIcon: FC<{ className?: string }> = ({ className }) => {
   return (
     <svg
       className={className}
-      width="33"
+      fill="none"
       height="33"
       viewBox="0 0 33 33"
-      fill="none"
+      width="33"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -16,12 +16,12 @@ const SparkleIcon: FC<{ className?: string }> = ({ className }) => {
       />
       <defs>
         <linearGradient
+          gradientUnits="userSpaceOnUse"
           id="paint0_linear_228_541"
           x1="0.0676927"
-          y1="17.0077"
           x2="32.0238"
+          y1="17.0077"
           y2="15.333"
-          gradientUnits="userSpaceOnUse"
         >
           <stop offset="0.140625" stopColor="#800EEB" />
           <stop offset="0.447917" stopColor="#EE2A7B" />

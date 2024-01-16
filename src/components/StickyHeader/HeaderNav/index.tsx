@@ -1,6 +1,7 @@
-import { useNavSpy } from "./NavSpyProvider";
-import { useNavLinks } from "./useNavLinks";
-import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
+
+import { useNavSpy } from './NavSpyProvider';
+import { useNavLinks } from './useNavLinks';
 
 interface HeaderNavProps {
   mobileNavVisible: boolean;
@@ -27,10 +28,10 @@ const HeaderNav: FC<HeaderNavProps> = ({
   const handleNavClick = (url: string) => {
     window.scrollTo({
       top:
-        url === "#home"
+        url === '#home'
           ? 0
           : window.scrollY + linkTargets[url].getBoundingClientRect().top - 100,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
 
     setMobileNavVisible(false);
@@ -39,17 +40,17 @@ const HeaderNav: FC<HeaderNavProps> = ({
   return (
     <nav
       className={`${
-        mobileNavVisible ? "fixed right-0 top-0" : "hidden"
+        mobileNavVisible ? 'fixed right-0 top-0' : 'hidden'
       } z-10 w-2/3 bg-black-primary p-7 dark:bg-white-primary md:static md:ml-8 md:block md:w-auto md:bg-opacity-0 md:p-0 dark:md:bg-opacity-0 lg:ml-16`}
     >
       <ul className="flex list-none flex-col gap-8 bg-gradient-to-r from-purple via-red to-orange bg-clip-text text-white-secondary dark:text-black-primary md:flex-row md:text-black-primary dark:md:text-white-secondary">
         {navLinks.map(({ hash, label, url }) => {
           return (
             <li
-              key={hash}
               className={`${
-                activeLink === url ? "text-purple md:text-transparent" : ""
+                activeLink === url ? 'text-purple md:text-transparent' : ''
               }`}
+              key={hash}
             >
               <a
                 className="hover:text-transparent"

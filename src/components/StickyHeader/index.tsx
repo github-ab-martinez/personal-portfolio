@@ -1,12 +1,15 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Heading from "../Heading";
-import HeaderNav from "./HeaderNav";
-import HeaderUtils from "./HeaderUtils";
-import MobileNavToggle from "./MobileNavToggle";
-import AbLogo from "@/assets/logos/AbLogo";
-import ContentContainer from "../ContentContainer";
+import { useState } from 'react';
+
+import Heading from '../Heading';
+import ContentContainer from '../ContentContainer';
+
+import HeaderNav from './HeaderNav';
+import HeaderUtils from './HeaderUtils';
+import MobileNavToggle from './MobileNavToggle';
+
+import AbLogo from '@/assets/logos/AbLogo';
 
 const StickyHeader = () => {
   const [mobileNavVisible, setMobileNavVisible] = useState(false);

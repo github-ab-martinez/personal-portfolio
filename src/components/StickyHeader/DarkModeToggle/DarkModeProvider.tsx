@@ -49,7 +49,7 @@ export const DarkModeProvider: FC<PropsWithChildren> = ({ children }) => {
         }
         return !isDarkMode;
       }),
-    []
+    [],
   );
 
   const value = useMemo(
@@ -57,7 +57,7 @@ export const DarkModeProvider: FC<PropsWithChildren> = ({ children }) => {
       darkMode,
       toggleDarkMode,
     }),
-    [darkMode, toggleDarkMode]
+    [darkMode, toggleDarkMode],
   );
 
   return (

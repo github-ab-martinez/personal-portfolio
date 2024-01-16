@@ -1,13 +1,14 @@
-import { FC } from "react";
-import { SVGLogo } from "../types";
+import { FC } from 'react';
+
+import { SVGLogo } from '../types';
 
 const NextLogo: FC<SVGLogo> = ({ darkMode, size }) => {
   return darkMode ? (
     <svg
-      width={size}
+      fill="none"
       height={size}
       viewBox="0 0 100 100"
-      fill="none"
+      width={size}
       xmlns="http://www.w3.org/2000/svg"
     >
       <g clipPath="url(#clip0_98_53971)">
@@ -26,23 +27,23 @@ const NextLogo: FC<SVGLogo> = ({ darkMode, size }) => {
       </g>
       <defs>
         <linearGradient
+          gradientUnits="userSpaceOnUse"
           id="paint0_linear_98_53971"
           x1="60.5555"
-          y1="64.7223"
           x2="80.2778"
+          y1="64.7223"
           y2="89.1666"
-          gradientUnits="userSpaceOnUse"
         >
           <stop />
           <stop offset="1" stopOpacity="0" />
         </linearGradient>
         <linearGradient
+          gradientUnits="userSpaceOnUse"
           id="paint1_linear_98_53971"
           x1="67.2225"
-          y1="30"
           x2="67.1108"
+          y1="30"
           y2="59.3751"
-          gradientUnits="userSpaceOnUse"
         >
           <stop />
           <stop offset="1" stopOpacity="0" />
@@ -51,10 +52,10 @@ const NextLogo: FC<SVGLogo> = ({ darkMode, size }) => {
     </svg>
   ) : (
     <svg
-      width={size}
+      fill="none"
       height={size}
       viewBox="0 0 100 100"
-      fill="none"
+      width={size}
       xmlns="http://www.w3.org/2000/svg"
     >
       <title>NexJS Logo</title>
@@ -74,23 +75,23 @@ const NextLogo: FC<SVGLogo> = ({ darkMode, size }) => {
       </g>
       <defs>
         <linearGradient
+          gradientUnits="userSpaceOnUse"
           id="paint0_linear_301_357"
           x1="60.5555"
-          y1="64.7223"
           x2="80.2778"
+          y1="64.7223"
           y2="89.1666"
-          gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="white" />
           <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
+          gradientUnits="userSpaceOnUse"
           id="paint1_linear_301_357"
           x1="67.2225"
-          y1="30"
           x2="67.1109"
+          y1="30"
           y2="59.3751"
-          gradientUnits="userSpaceOnUse"
         >
           <stop stopColor="white" />
           <stop offset="1" stopColor="white" stopOpacity="0" />

@@ -1,4 +1,4 @@
-import AbLogo from "@/assets/logos/AbLogo";
+import AbLogo from '@/assets/logos/AbLogo';
 
 const Footer = () => {
   return (
