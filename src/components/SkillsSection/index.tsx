@@ -1,12 +1,14 @@
-"use client";
+'use client';
 
-import { useEffect, useRef } from "react";
-import Heading from "../common/Heading";
-import PageSection from "../common/PageSection";
-import { useDarkMode } from "../common/StickyHeader/DarkModeToggle/DarkModeProvider";
-import { useNavSpy } from "../common/StickyHeader/HeaderNav/NavSpyProvider";
-import ToolCard from "./ToolCard";
-import { useTools } from "./useTools";
+import { useEffect, useRef } from 'react';
+
+import Heading from '../Heading';
+import PageSection from '../PageSection';
+import { useDarkMode } from '../StickyHeader/DarkModeToggle/DarkModeProvider';
+import { useNavSpy } from '../StickyHeader/HeaderNav/NavSpyProvider';
+
+import ToolCard from './ToolCard';
+import { useTools } from './useTools';
 
 const SkillsSection = () => {
   const tools = useTools();
@@ -21,10 +23,10 @@ const SkillsSection = () => {
   return (
     <PageSection className="text-center">
       <Heading
-        ref={skillsRef}
+        className="mb-5 inline-block bg-gradient-to-r from-purple via-red to-orange bg-clip-text text-transparent"
         id="skills"
         level="h2"
-        className="mb-5 inline-block bg-gradient-to-r from-purple via-red to-orange bg-clip-text text-transparent"
+        ref={skillsRef}
       >
         Skills
       </Heading>

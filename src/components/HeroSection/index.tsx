@@ -1,12 +1,14 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import Heading from "../common/Heading";
-import PageSection from "../common/PageSection";
-import CodeAnimation from "./CodeAnimation";
-import { useNavSpy } from "../common/StickyHeader/HeaderNav/NavSpyProvider";
-import { useEffect, useRef } from "react";
-import Link from "next/link";
+import { useEffect, useRef } from 'react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+import Heading from '../Heading';
+import PageSection from '../PageSection';
+import { useNavSpy } from '../StickyHeader/HeaderNav/NavSpyProvider';
+
+import CodeAnimation from './CodeAnimation';
 
 const HeroSection = () => {
   const { navObserver } = useNavSpy();
@@ -18,30 +20,30 @@ const HeroSection = () => {
 
   return (
     <PageSection
-      className="relative flex flex-col items-center gap-16 pt-20 lg:flex-row lg:flex-nowrap "
-      secondary={true}
+      className="relative flex flex-col items-center gap-16 pt-20 lg:flex-row lg:flex-nowrap"
+      secondary
     >
       <motion.div
-        initial={{ x: "-100%", opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1.25, type: "spring", bounce: 0.4 }}
+        animate={{ opacity: 1, x: 0 }}
         className="static z-10 text-center md:w-4/6 lg:mr-16 lg:w-1/2 lg:text-left"
+        initial={{ opacity: 0, x: '-100%' }}
+        transition={{ bounce: 0.4, duration: 1.25, type: 'spring' }}
       >
         <Heading
-          ref={heroRef}
-          id="home"
-          level="h2"
           as="h1"
           className="mb-10 lg:mb-14"
+          id="home"
+          level="h2"
+          ref={heroRef}
         >
-          Hi! I&apos;m A.b., a{" "}
+          Hi! I&apos;m A.b., a{' '}
           <span className="bg-gradient-to-r from-purple via-red to-orange bg-clip-text text-transparent">
             Software Engineer
-          </span>{" "}
+          </span>{' '}
           based in Austin.
         </Heading>
         <p className="mb-10 text-lg font-light leading-8 lg:mb-0 xl:w-4/5">
-          I build products for the web with a focus on{" "}
+          I build products for the web with a focus on{' '}
           <span className="font-semibold">developing UIs</span> that help users
           accomplish their goals.
         </p>
@@ -52,17 +54,17 @@ const HeroSection = () => {
         </div>
 
         <motion.span
-          initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ delay: 3.25, type: "spring", bounce: 0.4 }}
           className="relative -top-4 mx-auto -mb-4"
+          initial={{ scale: 0 }}
+          transition={{ bounce: 0.4, delay: 3.25, type: 'spring' }}
+          viewport={{ amount: 0.1, once: true }}
         >
           <Link
             className="relative z-10 rounded-full bg-white-primary px-4 py-4 text-lg font-semibold uppercase text-black-primary shadow-lg before:absolute before:left-[-3px] before:top-[-3px] before:-z-10 before:h-[calc(100%+6px)]  before:w-[calc(100%+6px)] before:rounded-full before:bg-gradient-to-r before:from-purple before:via-red before:to-orange before:opacity-0 before:transition-all before:duration-500 before:content-[''] after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:rounded-full after:bg-white-secondary after:content-[''] hover:text-black-primary hover:before:opacity-100 sm:px-6 md:w-auto"
             href="/resume/AbMartinez_Resume.pdf"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Download My Resume
           </Link>

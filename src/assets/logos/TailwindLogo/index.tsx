@@ -1,13 +1,14 @@
-import { FC } from "react";
-import { SVGLogo } from "../types";
+import { FC } from 'react';
+
+import { SVGLogo } from '../types';
 
 const TailwindLogo: FC<SVGLogo> = ({ size }) => {
   return (
     <svg
-      width={size}
+      fill="none"
       height={size}
       viewBox="0 0 100 100"
-      fill="none"
+      width={size}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

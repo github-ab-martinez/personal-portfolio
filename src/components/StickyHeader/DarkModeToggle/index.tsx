@@ -1,5 +1,6 @@
-import { Sun, Moon } from "lucide-react";
-import { useDarkMode } from "./DarkModeProvider";
+import { Sun, Moon } from 'lucide-react';
+
+import { useDarkMode } from './DarkModeProvider';
 
 const DarkModeToggle = () => {
   const { darkMode, toggleDarkMode } = useDarkMode();
@@ -10,10 +11,10 @@ const DarkModeToggle = () => {
       htmlFor="darkModeToggle"
     >
       <input
-        className="peer sr-only"
         checked={darkMode}
-        onChange={toggleDarkMode}
+        className="peer sr-only"
         id="darkModeToggle"
+        onChange={toggleDarkMode}
         type="checkbox"
       />
       <span
@@ -23,7 +24,7 @@ const DarkModeToggle = () => {
         {darkMode ? <Sun size={16} /> : <Moon size={16} />}
       </span>
       <span className="sr-only">{`Enable ${
-        darkMode ? "light" : "dark"
+        darkMode ? 'light' : 'dark'
       } mode`}</span>
     </label>
   );

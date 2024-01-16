@@ -9,7 +9,7 @@ const ContentContainer: FC<ContentContainerProps & PropsWithChildren> = ({
   className,
 }) => {
   return (
-    <div className={`2xl:container px-8 ${className}`.trim()}>{children}</div>
+    <div className={`px-8 2xl:container ${className}`.trim()}>{children}</div>
   );
 };
 

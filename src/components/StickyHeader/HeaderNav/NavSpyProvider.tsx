@@ -28,7 +28,7 @@ export const NavSpyProvider: FC<PropsWithChildren> = ({ children }) => {
         }
       });
     },
-    []
+    [],
   );
 
   const navObserver = useMemo(() => {
@@ -46,7 +46,7 @@ export const NavSpyProvider: FC<PropsWithChildren> = ({ children }) => {
       activeLink,
       navObserver,
     }),
-    [activeLink, navObserver]
+    [activeLink, navObserver],
   );
 
   return (

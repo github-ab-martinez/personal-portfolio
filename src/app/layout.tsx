@@ -1,12 +1,13 @@
-"use client";
+'use client';
 
-import Footer from "@/components/common/Footer";
-import "./globals.css";
-import AppWrapper from "@/components/common/AppWrapper";
-import StickyHeader from "@/components/common/StickyHeader";
-import { DarkModeProvider } from "@/components/common/StickyHeader/DarkModeToggle/DarkModeProvider";
-import { LazyMotion, domAnimation } from "framer-motion";
-import { NavSpyProvider } from "@/components/common/StickyHeader/HeaderNav/NavSpyProvider";
+import { LazyMotion, domAnimation } from 'framer-motion';
+
+import { DarkModeProvider } from '@/components/StickyHeader/DarkModeToggle/DarkModeProvider';
+import Footer from '@/components/Footer';
+import './globals.css';
+import AppWrapper from '@/components/AppWrapper';
+import StickyHeader from '@/components/StickyHeader';
+import { NavSpyProvider } from '@/components/StickyHeader/HeaderNav/NavSpyProvider';
 
 export default function RootLayout({
   children,
