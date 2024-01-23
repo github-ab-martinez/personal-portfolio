@@ -1,3 +1,5 @@
+'use client';
+
 import { FC, PropsWithChildren, useEffect, useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
@@ -15,11 +17,6 @@ const AppWrapper: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <html className={darkMode ? 'dark' : ''} lang="en">
-      <title>A.b. Martinez - Personal Portfolio</title>
-      <meta
-        content="The personal portfolio of A.b. Martinez, Software Engineer."
-        name="description"
-      />
       <body
         className={`${
           notoSans.className

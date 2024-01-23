@@ -1,15 +1,12 @@
+'use client';
+
 import { Menu, X } from 'lucide-react';
-import { Dispatch, FC, SetStateAction } from 'react';
 
-interface MobileNavToggleProps {
-  mobileNavVisible: boolean;
-  setMobileNavVisible: Dispatch<SetStateAction<boolean>>;
-}
+import { useMobileNav } from './MobileNavProvider';
 
-const MobileNavToggle: FC<MobileNavToggleProps> = ({
-  mobileNavVisible,
-  setMobileNavVisible,
-}) => {
+const MobileNavToggle = () => {
+  const { mobileNavVisible, toggleMobileNav } = useMobileNav();
+
   return (
     <button
       className={`${
@@ -17,7 +14,7 @@ const MobileNavToggle: FC<MobileNavToggleProps> = ({
           ? 'text-white-secondary dark:text-black-primary'
           : 'text-black-primary dark:text-white-secondary'
       } z-20 ml-5 md:hidden`}
-      onClick={() => setMobileNavVisible((isVisible) => !isVisible)}
+      onClick={() => toggleMobileNav()}
     >
       {mobileNavVisible ? (
         <X aria-hidden="true" />

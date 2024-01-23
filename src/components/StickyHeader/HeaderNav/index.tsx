@@ -1,18 +1,18 @@
-import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
+'use client';
+
+import { FC, useEffect, useState } from 'react';
+
+import { useMobileNav } from '../MobileNavToggle/MobileNavProvider';
 
 import { useNavSpy } from './NavSpyProvider';
-import { useNavLinks } from './useNavLinks';
+import { NavLink } from './useNavLinks';
 
-interface HeaderNavProps {
-  mobileNavVisible: boolean;
-  setMobileNavVisible: Dispatch<SetStateAction<boolean>>;
+interface NavProps {
+  navLinks: NavLink[];
 }
 
-const HeaderNav: FC<HeaderNavProps> = ({
-  mobileNavVisible,
-  setMobileNavVisible,
-}) => {
-  const navLinks = useNavLinks();
+const HeaderNav: FC<NavProps> = ({ navLinks }) => {
+  const { mobileNavVisible, toggleMobileNav } = useMobileNav();
   const { activeLink } = useNavSpy();
   const [linkTargets, setLinkTargets] = useState<Record<string, Element>>({});
 
@@ -34,7 +34,7 @@ const HeaderNav: FC<HeaderNavProps> = ({
       behavior: 'smooth',
     });
 
-    setMobileNavVisible(false);
+    toggleMobileNav();
   };
 
   return (

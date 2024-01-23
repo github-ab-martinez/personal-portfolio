@@ -1,3 +1,5 @@
+'use client';
+
 import { Sun, Moon } from 'lucide-react';
 
 import { useDarkMode } from './DarkModeProvider';
