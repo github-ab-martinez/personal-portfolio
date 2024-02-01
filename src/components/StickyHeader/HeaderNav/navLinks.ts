@@ -1,24 +1,11 @@
-export const getNavLinks = () => {
-  return [
-    {
-      hash: 'homeLink',
-      label: 'Home',
-      url: '#home',
-    },
-    {
-      hash: 'skillsLink',
-      label: 'Skills',
-      url: '#skills',
-    },
-    {
-      hash: 'experienceLink',
-      label: 'Experience',
-      url: '#experience',
-    },
-    {
-      hash: 'testimonialsLink',
-      label: 'Testimonials',
-      url: '#testimonials',
-    },
-  ];
+import { NavLink, getPrimaryNavLinks } from '@/../sanity/sanity-utils';
+
+export const getNavLinks = async (): Promise<NavLink[]> => {
+  const navLinks = await getPrimaryNavLinks();
+
+  if (navLinks.links) {
+    return navLinks.links;
+  }
+
+  return [];
 };

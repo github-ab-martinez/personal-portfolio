@@ -5,7 +5,8 @@ import { FC, useEffect, useState } from 'react';
 import { useMobileNav } from '../MobileNavToggle/MobileNavProvider';
 
 import { useNavSpy } from './NavSpyProvider';
-import { NavLink } from './useNavLinks';
+
+import { NavLink } from '@/../sanity/sanity-utils';
 
 interface NavProps {
   navLinks: NavLink[];
@@ -44,13 +45,13 @@ const HeaderNav: FC<NavProps> = ({ navLinks }) => {
       } z-10 w-2/3 bg-black-primary p-7 dark:bg-white-primary md:static md:ml-8 md:block md:w-auto md:bg-opacity-0 md:p-0 dark:md:bg-opacity-0 lg:ml-16`}
     >
       <ul className="flex list-none flex-col gap-8 bg-gradient-to-r from-purple via-red to-orange bg-clip-text text-white-secondary dark:text-black-primary md:flex-row md:text-black-primary dark:md:text-white-secondary">
-        {navLinks.map(({ hash, label, url }) => {
+        {navLinks.map(({ _key, label, url }) => {
           return (
             <li
               className={`${
                 activeLink === url ? 'text-purple md:text-transparent' : ''
               }`}
-              key={hash}
+              key={_key}
             >
               <a
                 className="hover:text-transparent"

@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 import { DarkModeProvider } from '@/components/StickyHeader/DarkModeToggle/DarkModeProvider';
 import Footer from '@/components/Footer';
-import './globals.css';
+import '../globals.css';
 import AppWrapper from '@/components/AppWrapper';
 import StickyHeader from '@/components/StickyHeader';
 import { NavSpyProvider } from '@/components/StickyHeader/HeaderNav/NavSpyProvider';
