@@ -9,8 +9,8 @@ import { useNavLinks } from './HeaderNav/useNavLinks';
 
 import AbLogo from '@/assets/logos/AbLogo';
 
-const StickyHeader = () => {
-  const navLinks = useNavLinks();
+const StickyHeader = async () => {
+  const navLinks = await useNavLinks();
 
   return (
     <MobileNavProvider>
