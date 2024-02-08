@@ -1,6 +1,9 @@
+import hero from './hero-schema';
+import landingPage from './landing-page-schema';
 import navbar from './navbar-schema';
 import navLink from './navlink-schema';
+import pageSection from './page-section-schema';
 
-const schemas = [navbar, navLink];
+const schemas = [landingPage, navbar, navLink, pageSection, hero];
 
 export default schemas;

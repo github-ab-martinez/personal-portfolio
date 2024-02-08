@@ -5,8 +5,7 @@ import { FC, useEffect, useState } from 'react';
 import { useMobileNav } from '../MobileNavToggle/MobileNavProvider';
 
 import { useNavSpy } from './NavSpyProvider';
-
-import { NavLink } from '@/../sanity/sanity-utils';
+import { NavLink } from './navLinks';
 
 interface NavProps {
   navLinks: NavLink[];

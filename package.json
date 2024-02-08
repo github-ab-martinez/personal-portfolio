@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@portabletext/react": "^3.0.11",
     "@vercel/analytics": "^1.1.1",
     "@vercel/speed-insights": "^1.0.2",
     "framer-motion": "^10.16.5",
@@ -17,7 +18,8 @@
     "next-sanity": "^7.0.15",
     "react": "^18",
     "react-dom": "^18",
-    "sanity": "^3.26.1"
+    "sanity": "^3.26.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20",
