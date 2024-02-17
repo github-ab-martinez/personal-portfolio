@@ -5,12 +5,12 @@ import HeaderNav from './HeaderNav';
 import HeaderUtils from './HeaderUtils';
 import MobileNavToggle from './MobileNavToggle';
 import { MobileNavProvider } from './MobileNavToggle/MobileNavProvider';
-import { useNavLinks } from './HeaderNav/useNavLinks';
+import { getNavLinks } from './HeaderNav/navLinks';
 
 import AbLogo from '@/assets/logos/AbLogo';
 
 const StickyHeader = async () => {
-  const navLinks = await useNavLinks();
+  const navLinks = await getNavLinks();
 
   return (
     <MobileNavProvider>

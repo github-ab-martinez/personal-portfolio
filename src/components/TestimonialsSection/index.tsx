@@ -19,7 +19,7 @@ const TestimonialsSection = () => {
   }, [navObserver]);
 
   return (
-    <PageSection className="text-center" style="secondary">
+    <PageSection className="text-center" secondary>
       <Heading
         className="mb-5 inline-block bg-gradient-to-r from-purple via-red to-orange bg-clip-text text-transparent"
         id="testimonials"

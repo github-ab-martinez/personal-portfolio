@@ -1,8 +1,10 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { FC, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { PortableText, PortableTextReactComponents } from '@portabletext/react';
+import { PortableTextBlock } from 'sanity';
 
 import Heading from '../Heading';
 import PageSection from '../PageSection';
@@ -10,7 +12,36 @@ import { useNavSpy } from '../StickyHeader/HeaderNav/NavSpyProvider';
 
 import CodeAnimation from './CodeAnimation';
 
-const HeroSection = () => {
+interface HeroProps {
+  content: PortableTextBlock[];
+}
+
+const myPortableTextComponents: Partial<PortableTextReactComponents> = {
+  marks: {
+    highlight: ({ children }) => (
+      <span className="bg-gradient-to-r from-purple via-red to-orange bg-clip-text text-transparent">
+        {children}
+      </span>
+    ),
+    strong: ({ children }) => (
+      <strong className="font-semibold">{children}</strong>
+    ),
+  },
+  block: {
+    h1: ({ children }) => (
+      <Heading as="h1" className="mb-10 lg:mb-14" id="home" level="h2">
+        {children}
+      </Heading>
+    ),
+    normal: ({ children }) => (
+      <p className="mb-10 text-lg font-light leading-8 lg:mb-0 xl:w-4/5">
+        {children}
+      </p>
+    ),
+  },
+};
+
+const Hero: FC<HeroProps> = ({ content }) => {
   const { navObserver } = useNavSpy();
   const heroRef = useRef(null);
 
@@ -29,24 +60,13 @@ const HeroSection = () => {
         initial={{ opacity: 0, x: '-100%' }}
         transition={{ bounce: 0.4, duration: 1.25, type: 'spring' }}
       >
-        <Heading
-          as="h1"
-          className="mb-10 lg:mb-14"
-          id="home"
-          level="h2"
-          ref={heroRef}
-        >
-          Hi! I&apos;m A.b., a{' '}
-          <span className="bg-gradient-to-r from-purple via-red to-orange bg-clip-text text-transparent">
-            Software Engineer
-          </span>{' '}
-          based in Austin.
-        </Heading>
-        <p className="mb-10 text-lg font-light leading-8 lg:mb-0 xl:w-4/5">
-          I build products for the web with a focus on{' '}
-          <span className="font-semibold">developing UIs</span> that help users
-          accomplish their goals.
-        </p>
+        {content.map((block) => (
+          <PortableText
+            components={myPortableTextComponents}
+            key={block._key}
+            value={block}
+          />
+        ))}
       </motion.div>
       <div className="flex flex-col lg:ml-auto lg:w-1/2 lg:pl-6">
         <div className="relative z-0 pt-6 before:absolute before:-right-[calc(50vw-50%)] before:top-0 before:-z-10 before:h-[calc(100%+theme(spacing.60))] before:w-screen before:bg-purple before:content-[''] after:absolute after:-right-[calc(50vw-50%)] after:-top-20 after:-z-10 after:h-[calc(theme(spacing.20))] after:w-screen after:bg-purple after:content-[''] after:clip-ellipse-bottom lg:static lg:pt-0 before:lg:-top-40 before:lg:h-[calc(100%+theme(spacing.80))] before:lg:w-[calc(50vw-theme(spacing.20))] after:lg:-top-40 after:lg:right-[calc(50%-theme(spacing.20))]  after:lg:h-[calc(100%+theme(spacing.60)+theme(spacing.44))] after:lg:w-[calc(theme(spacing.28))] after:lg:clip-ellipse-right">
@@ -75,4 +95,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default Hero;
