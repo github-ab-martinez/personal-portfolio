@@ -1,3 +1,4 @@
+import { Paintbrush2 } from 'lucide-react';
 import { defineArrayMember } from 'sanity';
 
 const CustomRichText = defineArrayMember({
@@ -13,6 +14,7 @@ const CustomRichText = defineArrayMember({
             {children}
           </span>
         ),
+        icon: () => <Paintbrush2 size={14} />,
       },
     ],
   },

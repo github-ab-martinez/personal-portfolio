@@ -1,32 +1,36 @@
-import { defineArrayMember } from 'sanity';
+import { defineField } from 'sanity';
 
 const landingPage = {
   name: 'landingPage',
   title: 'Landing Pages',
   type: 'document',
   fields: [
-    {
+    defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
-    },
-    {
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
       options: {
         source: 'title',
       },
-    },
-    {
-      name: 'pageSections',
-      title: 'Page Sections',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'content',
+      title: 'Page Content',
       type: 'array',
       of: [
-        defineArrayMember({ name: 'hero', type: 'hero' }),
+        { type: 'hero' },
         { type: 'pageSection' },
+        { type: 'availabilityBanner' },
       ],
-    },
+      validation: (Rule) => Rule.required(),
+    }),
   ],
 };
 
