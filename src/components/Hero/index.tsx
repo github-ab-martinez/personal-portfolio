@@ -23,6 +23,9 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
         {children}
       </span>
     ),
+    strong: ({ children }) => (
+      <strong className="font-semibold">{children}</strong>
+    ),
   },
   block: {
     h1: ({ children }) => (
