@@ -59,11 +59,6 @@ export async function getHomePageContent(): Promise<LandingPageType> {
         content
       }
     }[0]`,
-    {
-      next: {
-        revalidate: 60, // TODO: Remove this before deploying
-      },
-    },
   );
 
   if (!response.content) {
