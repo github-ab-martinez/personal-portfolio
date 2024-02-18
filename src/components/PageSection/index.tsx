@@ -4,8 +4,7 @@ import ContentContainer from '../ContentContainer';
 
 interface PageSectionProps extends PropsWithChildren {
   className?: string;
-  style?: 'primary' | 'secondary';
-  secondary?: boolean;
+  secondary: boolean;
 }
 
 const PageSection: FC<PageSectionProps> = ({
