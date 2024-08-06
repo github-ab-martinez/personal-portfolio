@@ -78,7 +78,7 @@ const ExperienceSection = () => {
             >
               {getFormattedDate(startDate)} -{' '}
               <span className="whitespace-nowrap">
-                {getFormattedDate(endDate)}
+                {endDate ? getFormattedDate(endDate) : 'Present'}
               </span>
             </Heading>
           </li>

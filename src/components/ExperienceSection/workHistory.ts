@@ -2,13 +2,21 @@ interface WorkInfo {
   company: string;
   location: string;
   startDate: Date;
-  endDate: Date;
+  endDate: Date | null;
   role: string;
   techStack: string[];
 }
 
 export const getWorkHistory = (): WorkInfo[] => {
   return [
+    {
+      company: 'Apple (Contract)',
+      location: 'Austin, TX',
+      startDate: new Date(2024, 1, 5),
+      endDate: null,
+      role: 'Senior UI Engineer',
+      techStack: ['React', 'NextJS', 'StyledComponents'],
+    },
     {
       company: 'BigCommere, Inc.',
       location: 'Austin, TX',
